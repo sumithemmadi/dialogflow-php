@@ -1,23 +1,28 @@
 # dialogflow-php
 
 <b>Secret Manager for PHP Overview</b>
+
 ## Installation
-To begin, install the preferred dependency manager for PHP, Composer.
 
-Now to install just this component:
+- To begin,lets clone this repository
 ```bash
-$ composer require google/cloud-secret-manager
-```
-Or to install the entire suite of components at once:
-```bash
-$ composer require google/cloud
-```
-This component supports both REST over HTTP/1.1 and gRPC. In order to take advantage of the benefits offered by gRPC (such as streaming methods) please see our gRPC installation guide.
+git clone https://github.com/sumithemmadi/dialogflow-php
+- Then  install the preferred dependency manager for PHP, Composer.
 
-## Authentication
-Please see our Authentication guide for more information on authenticating your client. Once authenticated, you'll be ready to start making requests.
+- Now to install required dependency enter below command:
+
+```bash
+composer install
+```
+
+- Or , Install latest version with below command:
+```bash
+composer require google/cloud-dialogflow
+```
+
 
 ## Sample
+-  Create a `config.json` with below contents .
 
 ```json
 {
@@ -27,5 +32,4 @@ Please see our Authentication guide for more information on authenticating your 
   "BOTNAME": "Rose"
 }
 ```
-## Version
-This component is considered GA (generally available). As such, it will not introduce backwards-incompatible changes in any minor or patch releases. We will address issues and requests with the highest priority.
+## LICENSE
