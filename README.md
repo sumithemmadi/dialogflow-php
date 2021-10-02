@@ -23,7 +23,7 @@ composer require google/cloud-dialogflow
 
 ## Usage
 
--  Create a `config.json`  file with below contents. 
+-  Create a `config.json`  file with below file contents. 
 ```json
 {
   "GOOGLE_APPLICATION_CREDENTIALS": "service-account-file.json",
@@ -35,7 +35,16 @@ composer require google/cloud-dialogflow
 1. <b>GOOGLE_APPLICATION_CREDENTIALS</b> : Replace `service-account-file.json` in above json with the file name downloaded from gcloud. 
 2. <b>DIALOGFLOW_SESSION_ID</b> : Replace `Dialogflow-session-id`
 3. <b>PROJECT_ID</b> : Replace `project-id` with your project ID.
-4. <b>BOTNAME</b> (optional) : Replace `bot-name` with any name
+4. <b>BOTNAME</b> (optional) : Replace `bot-name` with any other name
+## Testing
+- After creating `config.json` file  create a php server.
+```php
+php -S localhost:8080
+```
+- Now open any web browser and open the link http://localhost:8080 .
+- Now enter any name in `sender` field and enter any message in `message` field.
+- Click send message you will see `fullfilment message` 
+> Note: Wait untill you get fulfilment message.
 
 ## LICENSE
    Apache License
