@@ -42,6 +42,11 @@ composer require google/cloud-dialogflow
 curl -X POST http://localhost:8080/bot.php \
 -d '{"sender":"sumith","message":"how are you ?"}'
 ```
+```
+┌─[u0_a230@localhost]─[~/dialogflow-php]
+└──╼>> curl -X POST http://localhost:8080/bot.php -d '{"sender":"sumith","message":"how are you ?"}'
+Fulfilment text: I'm great thanks for asking
+```
 
 ## Testing
 - After creating `config.json` file  create a php server.
