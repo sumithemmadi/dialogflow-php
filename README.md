@@ -19,30 +19,13 @@ Please see our Authentication guide for more information on authenticating your 
 
 ## Sample
 
-```php
-require 'vendor/autoload.php';
-
-use Google\Cloud\SecretManager\V1\Replication;
-use Google\Cloud\SecretManager\V1\Replication\Automatic;
-use Google\Cloud\SecretManager\V1\Secret;
-use Google\Cloud\SecretManager\V1\SecretManagerServiceClient;
-
-$client = new SecretManagerServiceClient();
-
-$secret = $client->createSecret(
-    SecretManagerServiceClient::projectName('[MY_PROJECT_ID]'),
-    '[MY_SECRET_ID]',
-    new Secret([
-        'replication' => new Replication([
-            'automatic' => new Automatic()
-        ])
-    ])
-);
-
-printf(
-    'Created secret: %s' . PHP_EOL,
-    $secret->getName()
-);
+```json
+{
+  "GOOGLE_APPLICATION_CREDENTIALS": "service-account-file.json",
+  "DIALOGFLOW_SESSION_ID": "9ab552d6-9c25-7a82-fc39-c796bcd1d39c",
+  "PROJECT_ID": "sumith-rwup",
+  "BOTNAME": "Rose"
+}
 ```
 ## Version
 This component is considered GA (generally available). As such, it will not introduce backwards-incompatible changes in any minor or patch releases. We will address issues and requests with the highest priority.
