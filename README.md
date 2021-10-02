@@ -35,7 +35,14 @@ composer require google/cloud-dialogflow
 1. <b>GOOGLE_APPLICATION_CREDENTIALS</b> : Replace `service-account-file.json` in above json with the file name downloaded from gcloud. 
 2. <b>DIALOGFLOW_SESSION_ID</b> : Replace `Dialogflow-session-id`
 3. <b>PROJECT_ID</b> : Replace `project-id` with your project ID.
-4. <b>BOTNAME</b> (optional) : Replace `bot-name` with any other name
+4. <b>BOTNAME</b> (optional) : Replace `bot-name` with any other name.
+
+- Now create a web server and send a post request.
+```sh
+curl -X POST http://localhost:8080/bot.php \
+-d '{"sender":"sumith","message":"how are you ?"}'
+```
+
 ## Testing
 - After creating `config.json` file  create a php server.
 ```php
