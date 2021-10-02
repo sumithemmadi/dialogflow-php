@@ -1,12 +1,14 @@
 # dialogflow-php
 
-<b>Secret Manager for PHP Overview</b>
+<b>Dialogflow using php </b>
 
 ## Installation
 
 - To begin,lets clone this repository
 ```bash
-git clone https://github.com/sumithemmadi/dialogflow-php
+git clone https://github.com/sumithemmadi/dialogflow-php.git
+cd dialogflow-php
+```
 - Then  install the preferred dependency manager for PHP, Composer.
 
 - Now to install required dependency enter below command:
