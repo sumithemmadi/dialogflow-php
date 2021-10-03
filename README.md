@@ -54,7 +54,7 @@ Fulfilment text: I'm great thanks for asking.
 ```php
 php -S localhost:8080
 ```
-- Now open any web browser and open the link http://localhost:8080 .
+- Now open the http://localhost:8080 in any web browser.
 
 - Now enter any name in `sender` field and enter any message in `message` field.
 - Click send message you will see `fullfilment message` 
