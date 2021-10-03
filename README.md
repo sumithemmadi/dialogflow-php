@@ -1,6 +1,12 @@
 # dialogflow-php
 
 <b>Dialogflow using php </b>
+## Requirements
+
+* [Dialogflow Agent with active V2 API](https://dialogflow.com/docs/reference/v2-agent-setup)
+* [Google Account Credentials file](https://cloud.google.com/docs/authentication/production)
+* [PHP ](http://php.net/downloads.php)
+* [Composer](https://getcomposer.org/)
 
 ## Installation
 
@@ -20,7 +26,6 @@ composer install
 composer require google/cloud-dialogflow
 ```
 
-
 ## Usage
 
 -  Create a `config.json`  file with below file contents. 
@@ -32,7 +37,7 @@ composer require google/cloud-dialogflow
   "BOTNAME": "bot-name"
 }
 ```
-1. <b>GOOGLE_APPLICATION_CREDENTIALS</b> : Replace `service-account-file.json` in above json with the file name downloaded from gcloud. 
+1. <b>GOOGLE_APPLICATION_CREDENTIALS</b> : Replace `service-account-file.json` in above json with the [google account credentials](https://cloud.google.com/docs/authentication/production) file name downloaded from gcloud.You should place your [Google Account Credentials](https://cloud.google.com/docs/authentication/production) file,config json and `dialogflow.php` in the root dictionary on your server. It's on you to ensure that google account credentials file  and config.json file are  not accessible from the web!
 2. <b>DIALOGFLOW_SESSION_ID</b> : Replace `Dialogflow-session-id`
 3. <b>PROJECT_ID</b> : Replace `project-id` with your project ID.
 4. <b>BOTNAME</b> (optional) : Replace `bot-name` with any other name.
