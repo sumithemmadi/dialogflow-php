@@ -67,7 +67,7 @@ if (!empty($data->sender) && !empty($data->message)) {
     $queryInput = new QueryInput();
     $queryInput->setText($textInput);
     
-    // get response and relevant info
+    // Response
     $response       = $sessionsClient->detectIntent($session, $queryInput);
     $queryResult    = $response->getQueryResult();
     $queryText      = $queryResult->getQueryText();
