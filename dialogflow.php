@@ -75,10 +75,10 @@ if (!empty($data->sender) && !empty($data->message)) {
     $displayName    = $intent->getDisplayName();
     $confidence     = $queryResult->getIntentDetectionConfidence();
     $fulfilmentText = $queryResult->getFulfillmentText();
-    echo 'Response\n\n';
+    
     printf('Fulfilment text: %s' . PHP_EOL, $fulfilmentText);
     printf('Display Name   : %s' . PHP_EOL, $displayName);
-    
+    printf('Query Text     : %s' . PHP_EOL, $queryText);
     //print parameters
     if ($response->getQueryResult()->getParameters()->getFields()->count()) {
         foreach ($response->getQueryResult()->getParameters()->getFields() as $key => $value) {
