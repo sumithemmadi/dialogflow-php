@@ -43,7 +43,7 @@ $data = json_decode(file_get_contents("php://input"));
 
 if (!empty($data->sender) && !empty($data->message)) {
     $sender = $data->sender;
-    $sessionId = $sender
+    $sessionId = $sender;
     $text   = $data->message;
     http_response_code(200);
     
