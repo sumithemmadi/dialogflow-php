@@ -1,6 +1,6 @@
 {
   "GOOGLE_APPLICATION_CREDENTIALS": "service-account-file.json",
-  "DIALOGFLOW_SESSION_ID": "Dialogflow-session-id",
+  "SESSION_ID": "Session-ID",
   "PROJECT_ID": "project-id",
   "BOTNAME": "bot-name"
 }
