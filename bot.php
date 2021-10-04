@@ -38,7 +38,12 @@ $config_data = json_decode($config_json, TRUE);
 $google_application_credentials = $config_data['GOOGLE_APPLICATION_CREDENTIALS'];
 
 // Session ID, can be any string for this purpose. However, if you are going to be using the client library to manage an entire conversation, your session_ID must be the same across an entire
-$sessionId= $config_data['SESSION_ID'];
+$sessionId= "SET_YOUR_OWN_SESSION_ID"
+
+// Generating Random Session ID
+if($sessionId == "SET_YOUR_OWN_SESSION_ID") {
+    $sessionId = uniqid('uniqid_');
+}
 
 // PROJECT ID
 $projectId = $config_data['PROJECT_ID'];
