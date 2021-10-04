@@ -76,20 +76,23 @@ if (!empty($data->sender) && !empty($data->message)) {
     $displayName    = $intent->getDisplayName();
     $confidence     = $queryResult->getIntentDetectionConfidence();
     $fulfilmentText = $queryResult->getFulfillmentText();
-    if ($response->getQueryResult()->getParameters()->getFields()->count()) {
-        foreach ($response->getQueryResult()->getParameters()->getFields() as $key => $value) {
-            $params[$key] = $value->serializeToJsonString();
-        }
-    }
+    
     printf('%s' . PHP_EOL,json_encode(json_decode($json_response),JSON_PRETTY_PRINT));
     
     /*
-    // Example to print values
+    // print response
     printf('Fulfilment text: %s' . PHP_EOL, $fulfilmentText);
     printf('Display Name   : %s' . PHP_EOL, $displayName);
     printf('Query Text     : %s' . PHP_EOL, $queryText);
-    printf('Parameter      : %s' . PHP_EOL, $key);
-    printf('%s' . PHP_EOL, json_encode(json_decode($params[$key]),JSON_PRETTY_PRINT));
+
+    //print parameters
+    if ($response->getQueryResult()->getParameters()->getFields()->count()) {
+        foreach ($response->getQueryResult()->getParameters()->getFields() as $key => $value) {
+            $params[$key] = $value->serializeToJsonString();
+            printf('Parameter: %s' . PHP_EOL, $key);
+            printf('%s' . PHP_EOL, json_encode(json_decode($params[$key]),JSON_PRETTY_PRINT));
+        }
+    }
     */
 } else {
     http_response_code(400);
