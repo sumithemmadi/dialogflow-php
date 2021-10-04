@@ -25,7 +25,7 @@ composer install
 composer require google/cloud-dialogflow
 ```
 
-## Download the Google Account Credentials File
+## Usage
 - Download the Google Account Credentials JSON file for your v2 Dialogflow agent into the diaglogflow-php folder
 
 - Make sure v2 API is enabled in Dialogflow
@@ -40,23 +40,7 @@ composer require google/cloud-dialogflow
 - Click on the create
 ![create_key_slideout](https://user-images.githubusercontent.com/50250422/135780443-9d351d03-405c-49a4-9317-9131bab92041.png)
 - You will be prompted to save the Google Account Credentials JSON file. Save the file as `service-account-file.json` to the dialogflow-php folder.
-
-## usage
--  Create a `config.json`  file with below file contents. 
-```json
-{
-  "GOOGLE_APPLICATION_CREDENTIALS": "service-account-file.json",
-  "SESSION_ID": "Session-ID",
-  "PROJECT_ID": "project-id"
-}
-```
-- Or Rename `config.example.json` file with `config.json`. Open `config.json` with any text editor and change everything.
-
-1. <b>GOOGLE_APPLICATION_CREDENTIALS</b> : Replace `service-account-file.json` in above json with the [google account credentials](https://cloud.google.com/docs/authentication/production) file name downloaded from gcloud.
-> Note :- You should place your [Google Account Credentials](https://cloud.google.com/docs/authentication/production) file, `config json` and `dialogflow.php` in the root dictionary on your server. It's on you to ensure that [google account credentials](https://cloud.google.com/docs/authentication/production) file  and `config.json` file are  not accessible from the web!
-2. <b>SESSION_ID</b> : `Session-ID`, can be any string for this purpose. However, if you are going to be using the client library to manage an entire conversation, your Session-ID must be the same across an entire
-3. <b>PROJECT_ID</b> : Replace `project-id` with your project ID.
-
+> Make sure that `service-account-file.json` file is in  main directory
 - Now create a web server and send a post request.
 ```sh
 curl -Xs POST http://localhost:8080/dialogflow.php \
@@ -97,7 +81,8 @@ curl -Xs POST http://localhost:8080/dialogflow.php \
 ```
 
 ## Testing
-- After creating `config.json` file  create a php server.
+- After saving the `service-account-file.json` file in main directory.
+- start a PHP server (for testing purpose)
 ```php
 php -S localhost:8080
 ```
