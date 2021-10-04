@@ -25,25 +25,20 @@ composer install
 composer require google/cloud-dialogflow
 ```
 
-## Download the client secret JSON file for your v2 Dialogflow agent into the quickstart folder
+## Download the Google Account Credentials
+- Download the Google Account Credentials JSON file for your v2 Dialogflow agent into the diaglogflow-php folder
 
-2.1 Make sure v2 API is enabled
+- Make sure v2 API is enabled
 
-2.2 Click on the service account email address
+- Click on the service account email address.
+- You will be taken to the Google Cloud Console.
+- Click on the Create Service Account link at the top of the console menu
+- Provide a suitable name for the service account
+- Select Project -> Owner in the Role dropdown box
+- Make sure you check the Furnish a new private key box. Keep the key type as JSON
+- Click on the create link
+- You will be prompted to save the Google Account Credentials JSON file. Save the file as `service-account-file.json` to the dialogflow-php folder.
 
-You will be taken to the Google Cloud Console.
-
-2.3 Click on the Create Service Account link at the top of the console menu
-
-2.4 Provide a suitable name for the service account
-
-2.5 Select Project -> Owner in the Role dropdown box
-
-2.6 Make sure you check the Furnish a new private key box. Keep the key type as JSON
-
-2.7 Click on the create link
-
-2.8 You will be prompted to save the client secret JSON file. Save the file as client-secret.json to the quickstart folder you just created
 ##usage
 -  Create a `config.json`  file with below file contents. 
 ```json
