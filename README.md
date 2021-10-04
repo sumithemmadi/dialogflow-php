@@ -59,14 +59,41 @@ composer require google/cloud-dialogflow
 
 - Now create a web server and send a post request.
 ```sh
-curl -X POST http://localhost:8080/dialogflow.php \
--d '{"sender":"sumith","message":"how are you ?"}'
+curl -Xs POST http://localhost:8080/dialogflow.php \
+-d '{"sender":"sumith","message":"my name is sumith"}'
 ```
 ```sh
-~$ curl -X POST http://localhost:8080/dialogflow.php \
--d '{"sender":"sumith","message":"how are you ?"}'
+~$ curl -sX POST http://localhost:8080/dialogflow.php \
+-d '{"sender":"sumith","message":"my name is sumith"}'
 
-Fulfilment text: I'm great thanks for asking.
+{
+    "responseId": "f7f810a1-0043-4f85-ac6c-241705aa6b8a-94f60986",
+    "queryResult": {
+        "queryText": "my name is sumith",
+        "languageCode": "en",
+        "parameters": {
+            "person": {
+                "name": "sumith"
+            }
+        },
+        "allRequiredParamsPresent": true,
+        "fulfillmentText": "Sorry, I was not able to understand your intention . I'm trying to get better at this thing.",
+        "fulfillmentMessages": [
+            {
+                "text": {
+                    "text": [
+                        "Sorry, I was not able to understand your intention . I'm trying to get better at this thing."
+                    ]
+                }
+            }
+        ],
+        "intent": {
+            "name": "projects\/sumith-rwup\/agent\/intents\/f95d3add-52fb-4119-87f0-e1717181173d",
+            "displayName": "user.name"
+        },
+        "intentDetectionConfidence": 1
+    }
+}
 ```
 
 ## Testing
