@@ -88,8 +88,7 @@ if (!empty($data->sender) && !empty($data->message)) {
             $params[$key] = $value->serializeToJsonString();
             printf("\r\nPARAMETERS\r\n");
             printf('Parameter: %s\r\n' . PHP_EOL, $key);
-            printf('%s' . PHP_EOL, $params[$key]);
-            
+            printf('%s' . PHP_EOL, json_encode(json_decode($params[$key]),JSON_PRETTY_PRINT););
         }
     }
 } else {
