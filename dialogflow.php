@@ -35,7 +35,7 @@ $config_json = file_get_contents("config.json");
 $config_data = json_decode($config_json, TRUE);
 
 //Path to GOOGLE_APPLICATION_CREDENTIALS
-$json_path = $config_data['GOOGLE_APPLICATION_CREDENTIALS'];
+$google_application_credentials = $config_data['GOOGLE_APPLICATION_CREDENTIALS'];
 
 // Dialogflow Session Id
 $dialogflow_session = $config_data['DIALOGFLOW_SESSION_ID'];
@@ -58,7 +58,7 @@ if (!empty($data->sender) && !empty($data->message)) {
     $languageCode   = 'en-US';
     // new session
     $test           = array(
-        'credentials' => $json_path
+        'credentials' => $google_application_credentials
     );
     $sessionsClient = new SessionsClient($test);
     $session        = $sessionsClient->sessionName($projectId, $dialogflow_session ?: uniqid());
