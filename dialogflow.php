@@ -77,8 +77,8 @@ if (!empty($data->sender) && !empty($data->message)) {
     $fulfilmentText = $queryResult->getFulfillmentText();
 
     // print response
-    printf("RESPONSE\n\n");
-    printf('Fulfilment text: %s' . PHP_EOL, $fulfilmentText);
+    printf("\r\nRESPONSE\n\n");
+    printf("Fulfilment text: %s" . PHP_EOL, $fulfilmentText);
     printf('Display Name   : %s' . PHP_EOL, $displayName);
     printf('Query Text     : %s' . PHP_EOL, $queryText);
 
@@ -86,7 +86,7 @@ if (!empty($data->sender) && !empty($data->message)) {
     if ($response->getQueryResult()->getParameters()->getFields()->count()) {
         foreach ($response->getQueryResult()->getParameters()->getFields() as $key => $value) {
             $params[$key] = $value->serializeToJsonString();
-            printf("\r\nPARAMETERS\r\n");
+            printf("\nPARAMETERS\n\n");
             printf('Parameter: %s' . PHP_EOL, $key);
             printf('%s' . PHP_EOL, json_encode(json_decode($params[$key]),JSON_PRETTY_PRINT));
         }
