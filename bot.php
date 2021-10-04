@@ -32,6 +32,8 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 // Save Google Account Credentials json file as 'service-account-file.json'
 //make sure that Google Account Credentials JSON file and this file are in same directory.
 
+$data = json_decode(file_get_contents("php://input"));
+
 $google_application_credentials = "service-account-file.json";
 
 $get_json_data    = file_get_contents($google_application_credentials);
@@ -39,14 +41,12 @@ $decode_json_data = json_decode($get_json_data, TRUE);
 $projectId        = $decode_json_data['project_id'];
 
 // Session ID, can be any string for this purpose. However, if you are going to be using the client library to manage an entire conversation, your session_ID must be the same across an entire
-$sessionId= "SET_YOUR_OWN_SESSION_ID";
+// $sessionId= $data->sid;
 
-// Generating Random Session ID
-if($sessionId == "SET_YOUR_OWN_SESSION_ID") {
+// Generating Random Session ID if sid not present in json post request.
+if(!empty($data->sid)) {
     $sessionId = uniqid('sid-');
 }
-
-$data = json_decode(file_get_contents("php://input"));
 
 function  get_response($projectId,$google_application_credentials, $text, $sessionId) {
     // new session
@@ -74,13 +74,12 @@ function  get_response($projectId,$google_application_credentials, $text, $sessi
     return $json_response;
 }
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST' &&
-    !empty($data->sender) && !empty($data->message)) {
-     $sender = $data->sender;
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($data->message)) {
+     // $sid = $data->sid;
      $text   = $data->message;
      http_response_code(200);
      echo get_response($projectId,$google_application_credentials, $text, $sessionId);
-//     echo $sessionId;
+     echo $sessionId;
 } else {
     http_response_code(400);
     // Error
