@@ -78,17 +78,17 @@ if (!empty($data->sender) && !empty($data->message)) {
 
     // print response
     printf("<h3>RESPONSE</h3>");
-    printf("Fulfilment text: %s<br>" . PHP_EOL, $fulfilmentText);
-    printf("Display Name   : %s<br>" . PHP_EOL, $displayName);
-    printf("Query Text     : %s<br>" . PHP_EOL, $queryText);
+    printf("<b>Fulfilment text: %s</b><br>" . PHP_EOL, $fulfilmentText);
+    printf("<b>Display Name   : %s</b><br>" . PHP_EOL, $displayName);
+    printf("<b>Query Text     : %s</b><br>" . PHP_EOL, $queryText);
 
     //print parameters
     if ($response->getQueryResult()->getParameters()->getFields()->count()) {
         foreach ($response->getQueryResult()->getParameters()->getFields() as $key => $value) {
             $params[$key] = $value->serializeToJsonString();
             printf("<h3>PARAMETERS</h3>");
-            printf("Parameter: %s<br>" . PHP_EOL, $key);
-            printf('%s' . PHP_EOL, json_encode(json_decode($params[$key]),JSON_PRETTY_PRINT));
+            printf("<b>Parameter: %s</b><br>" . PHP_EOL, $key);
+            printf("<b>%s</b><br>" . PHP_EOL, json_encode(json_decode($params[$key]),JSON_PRETTY_PRINT));
         }
     }
 } else {
