@@ -84,21 +84,12 @@ if (!empty($data->sender) && !empty($data->message)) {
     printf('%s' . PHP_EOL,json_encode(json_decode($json_response),JSON_PRETTY_PRINT));
     
     /*
-    // print response
-    printf("\r\nRESPONSE\n\n");
+    // Example to print values
     printf('Fulfilment text: %s' . PHP_EOL, $fulfilmentText);
     printf('Display Name   : %s' . PHP_EOL, $displayName);
     printf('Query Text     : %s' . PHP_EOL, $queryText);
-
-    //print parameters
-    if ($response->getQueryResult()->getParameters()->getFields()->count()) {
-        foreach ($response->getQueryResult()->getParameters()->getFields() as $key => $value) {
-            $params[$key] = $value->serializeToJsonString();
-            printf("\nPARAMETERS\n\n");
-            printf('Parameter: %s' . PHP_EOL, $key);
-            printf('%s' . PHP_EOL, json_encode(json_decode($params[$key]),JSON_PRETTY_PRINT));
-        }
-    }
+    printf('Parameter      : %s' . PHP_EOL, $key);
+    printf('%s' . PHP_EOL, json_encode(json_decode($params[$key]),JSON_PRETTY_PRINT));
     */
 } else {
     http_response_code(400);
