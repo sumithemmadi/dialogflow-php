@@ -76,22 +76,24 @@ if (!empty($data->sender) && !empty($data->message)) {
     $displayName    = $intent->getDisplayName();
     $confidence     = $queryResult->getIntentDetectionConfidence();
     $fulfilmentText = $queryResult->getFulfillmentText();
-    if ($response->getQueryResult()->getParameters()->getFields()->count()) {
-        foreach ($response->getQueryResult()->getParameters()->getFields() as $key => $value) {
-            $params[$key] = $value->serializeToJsonString();
-        }
-    }
+    
+    //print JSON response
     //printf('%s' . PHP_EOL,json_encode(json_decode($json_response),JSON_PRETTY_PRINT));
-
     // print response
     printf("<h3>RESPONSE</h3>");
     printf("<b>Fulfilment Text</b>: %s<br>" . PHP_EOL, $fulfilmentText);
     printf("<b>Display Name   </b>: %s<br>" . PHP_EOL, $displayName);
     printf("<b>Query Text     </b>: %s<br>" . PHP_EOL, $queryText);
-    printf("<h3>PARAMETERS</h3>");
-    printf("<b>Parameter</b>: %s<br>" . PHP_EOL, $key);
-    printf("%s<br>" . PHP_EOL, json_encode(json_decode($params[$key]),JSON_PRETTY_PRINT));
 
+    //print parameters
+    if ($response->getQueryResult()->getParameters()->getFields()->count()) {
+        foreach ($response->getQueryResult()->getParameters()->getFields() as $key => $value) {
+            $params[$key] = $value->serializeToJsonString();
+            printf("<h3>PARAMETERS</h3>");
+            printf("<b>Parameter</b>: %s<br>" . PHP_EOL, $key);
+            printf("%s<br>" . PHP_EOL, json_encode(json_decode($params[$key]),JSON_PRETTY_PRINT));
+        }
+    }
 } else {
     http_response_code(400);
     // Error
