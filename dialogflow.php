@@ -78,7 +78,7 @@ if (!empty($data->sender) && !empty($data->message)) {
 
     // print response
     printf("\r\nRESPONSE\n\n");
-    printf("Fulfilment text: %s" . PHP_EOL, $fulfilmentText);
+    printf('Fulfilment text: %s' . PHP_EOL, $fulfilmentText);
     printf('Display Name   : %s' . PHP_EOL, $displayName);
     printf('Query Text     : %s' . PHP_EOL, $queryText);
 
