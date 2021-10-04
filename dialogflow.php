@@ -44,9 +44,6 @@ $sessionId= $config_data['SESSION_ID'];
 // PROJECT ID
 $projectId = $config_data['PROJECT_ID'];
 
-//bot name
-$botname = $config_data['BOTNAME'];
-
 $data = json_decode(file_get_contents("php://input"));
 
 if (!empty($data->sender) && !empty($data->message)) {
