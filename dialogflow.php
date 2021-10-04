@@ -87,7 +87,7 @@ if (!empty($data->sender) && !empty($data->message)) {
         foreach ($response->getQueryResult()->getParameters()->getFields() as $key => $value) {
             $params[$key] = $value->serializeToJsonString();
             printf("\r\nPARAMETERS\r\n");
-            printf('Parameter: %s\r\n' . PHP_EOL, $key);
+            printf('Parameter: %s' . PHP_EOL, $key);
             printf('%s' . PHP_EOL, json_encode(json_decode($params[$key]),JSON_PRETTY_PRINT));
         }
     }
