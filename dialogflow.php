@@ -65,7 +65,6 @@ if (!empty($data->sender) && !empty($data->message)) {
 
     // create query input
     $queryInput = new QueryInput();
-    
     $queryInput->setText($textInput);
     
     // get response and relevant info
