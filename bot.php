@@ -1,13 +1,10 @@
-<?php
-/*
-                                 Apache License
+<?php                                                             /*                                                                                                 Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/
 
    Copyright 2021 sumithemmadi
 
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
+   Licensed under the Apache License, Version 2.0 (the "License");   you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
        http://www.apache.org/licenses/LICENSE-2.0
@@ -31,10 +28,10 @@ header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
-$config_json = file_get_contents("config.json");
-$config_data = json_decode($config_json, TRUE);
 
-//Path to GOOGLE_APPLICATION_CREDENTIALS
+// Save Google Account Credentials json file as 'service-account-file.json'
+//make sure that Google Account Credentials JSON file and this file are in same directory.
+
 $google_application_credentials = "service-account-file.json";
 
 $get_json_data    = file_get_contents($google_application_credentials);
@@ -42,11 +39,11 @@ $decode_json_data = json_decode($get_json_data, TRUE);
 $projectId        = $decode_json_data['project_id'];
 
 // Session ID, can be any string for this purpose. However, if you are going to be using the client library to manage an entire conversation, your session_ID must be the same across an entire
-$sessionId= "SET_YOUR_OWN_SESSION_ID"
+$sessionId= "SET_YOUR_OWN_SESSION_ID";
 
 // Generating Random Session ID
 if($sessionId == "SET_YOUR_OWN_SESSION_ID") {
-    $sessionId = uniqid('uniqid_');
+    $sessionId = uniqid('sid-');
 }
 
 $data = json_decode(file_get_contents("php://input"));
@@ -83,9 +80,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' &&
      $text   = $data->message;
      http_response_code(200);
      echo get_response($projectId,$google_application_credentials, $text, $sessionId);
+//     echo $sessionId;
 } else {
     http_response_code(400);
     // Error
     echo "Error ❌";
 }
+
 ?>
