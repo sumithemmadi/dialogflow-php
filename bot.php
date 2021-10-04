@@ -41,10 +41,10 @@ $decode_json_data = json_decode($get_json_data, TRUE);
 $projectId        = $decode_json_data['project_id'];
 
 // Session ID, can be any string for this purpose. However, if you are going to be using the client library to manage an entire conversation, your session_ID must be the same across an entire
-// $sessionId= $data->sid;
-
-// Generating Random Session ID if sid not present in json post request.
-if(!empty($data->sid)) {
+// Generate Random Session ID  if `sid` not present in json post request.
+if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($data->sid)) {
+    $sessionId = $data->sid;
+} else {
     $sessionId = uniqid('sid-');
 }
 
@@ -75,7 +75,6 @@ function  get_response($projectId,$google_application_credentials, $text, $sessi
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($data->message)) {
-     // $sid = $data->sid;
      $text   = $data->message;
      http_response_code(200);
      echo get_response($projectId,$google_application_credentials, $text, $sessionId);
