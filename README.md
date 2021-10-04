@@ -25,7 +25,7 @@ composer install
 composer require google/cloud-dialogflow
 ```
 
-## Download the Google Account Credentials
+## Download the Google Account Credentials File
 - Download the Google Account Credentials JSON file for your v2 Dialogflow agent into the diaglogflow-php folder
 
 - Make sure v2 API is enabled in Dialogflow
