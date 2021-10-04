@@ -1,6 +1,5 @@
 # dialogflow-php
-
-<b>Dialogflow using php </b>
+- PHP Client Library for Dialogflow API v2
 ## Requirements
 
 * [Dialogflow Agent](https://dialogflow.com/docs/reference/v2-agent-setup)
