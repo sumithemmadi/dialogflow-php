@@ -46,18 +46,16 @@ composer require google/cloud-dialogflow
 ```json
 {
   "GOOGLE_APPLICATION_CREDENTIALS": "service-account-file.json",
-  "DIALOGFLOW_SESSION_ID": "Dialogflow-session-id",
-  "PROJECT_ID": "project-id",
-  "BOTNAME": "bot-name"
+  "DIALOGFLOW_SESSION_ID": "Session-ID",
+  "PROJECT_ID": "project-id"
 }
 ```
 - Or Rename `config.example.json` file with `config.json`. Open `config.json` with any text editor and change everything.
 
 1. <b>GOOGLE_APPLICATION_CREDENTIALS</b> : Replace `service-account-file.json` in above json with the [google account credentials](https://cloud.google.com/docs/authentication/production) file name downloaded from gcloud.
 > Note :- You should place your [Google Account Credentials](https://cloud.google.com/docs/authentication/production) file, `config json` and `dialogflow.php` in the root dictionary on your server. It's on you to ensure that [google account credentials](https://cloud.google.com/docs/authentication/production) file  and `config.json` file are  not accessible from the web!
-2. <b>DIALOGFLOW_SESSION_ID</b> : Replace `Dialogflow-session-id`
+2. <b>DIALOGFLOW_SESSION_ID</b> : `Session-ID`, can be any string for this purpose. However, if you are going to be using the client library to manage an entire conversation, your Session-ID must be the same across an entire
 3. <b>PROJECT_ID</b> : Replace `project-id` with your project ID.
-4. <b>BOTNAME</b> (optional) : Replace `bot-name` with any other name.
 
 - Now create a web server and send a post request.
 ```sh
