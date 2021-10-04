@@ -56,7 +56,7 @@ if (!empty($data->sender) && !empty($data->message)) {
     );
     $sessionsClient = $sessionId;
     $sessionsClient = new SessionsClient($test);
-    $session        = $sessionsClient->sessionName($projectId, $dialogflow_session ?: uniqid());
+    $session        = $sessionsClient->sessionName($projectId, $sessionId ?: uniqid());
 
     // create text input
     $textInput      = new TextInput();
