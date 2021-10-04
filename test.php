@@ -31,22 +31,20 @@ header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
-$config_json = file_get_contents("config.json");
-$config_data = json_decode($config_json, TRUE);
 
-//Path to GOOGLE_APPLICATION_CREDENTIALS
-$google_application_credentials = $config_data['GOOGLE_APPLICATION_CREDENTIALS'];
+// Save Google Account Credentials json file as 'service-account-file.json'
+//make sure that Google Account Credentials JSON file and this file are in same directory.
+$google_application_credentials = "service-account-file.json";
 
-// Session ID, can be any string for this purpose. However, if you are going to be using the client library to manage an entire conversation, your session_ID must be the same across an entire
-$sessionId= $config_data['SESSION_ID'];
-
-// PROJECT ID
-$projectId = $config_data['PROJECT_ID'];
+$get_json_data    = file_get_contents($google_application_credentials);
+$decode_json_data = json_decode($get_json_data, TRUE);
+$projectId        = $decode_json_data['project_id'];
 
 $data = json_decode(file_get_contents("php://input"));
 
 if (!empty($data->sender) && !empty($data->message)) {
     $sender = $data->sender;
+    $sessionId = $sender
     $text   = $data->message;
     http_response_code(200);
     
