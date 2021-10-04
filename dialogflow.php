@@ -37,7 +37,6 @@ $config_data = json_decode($config_json, TRUE);
 //Path to GOOGLE_APPLICATION_CREDENTIALS
 $google_application_credentials = $config_data['GOOGLE_APPLICATION_CREDENTIALS'];
 
-
 // Session ID, can be any string for this purpose. However, if you are going to be using the client library to manage an entire conversation, your session_ID must be the same across an entire
 $sessionId= $config_data['SESSION_ID'];
 
@@ -51,19 +50,19 @@ if (!empty($data->sender) && !empty($data->message)) {
     $text   = $data->message;
     http_response_code(200);
     
-    //$sessionsClient
-    $sessionsClient = $sessionId;
-    $languageCode   = 'en-US';
     // new session
     $test           = array(
         'credentials' => $google_application_credentials
     );
+    $sessionsClient = $sessionId;
     $sessionsClient = new SessionsClient($test);
     $session        = $sessionsClient->sessionName($projectId, $dialogflow_session ?: uniqid());
+
     // create text input
     $textInput      = new TextInput();
     $textInput->setText($text);
-    $textInput->setLanguageCode($languageCode);
+    $textInput->setLanguageCode('en-US');
+
     // create query input
     $queryInput = new QueryInput();
     
