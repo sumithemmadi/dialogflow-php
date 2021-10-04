@@ -39,7 +39,7 @@ composer require google/cloud-dialogflow
 - Click on the create link
 - You will be prompted to save the Google Account Credentials JSON file. Save the file as `service-account-file.json` to the dialogflow-php folder.
 
-##usage
+## usage
 -  Create a `config.json`  file with below file contents. 
 ```json
 {
