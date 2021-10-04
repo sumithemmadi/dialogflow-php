@@ -33,7 +33,6 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 
 // Save Google Account Credentials json file as 'service-account-file.json'
 //make sure that Google Account Credentials JSON file and this file are in same directory.
-
 $google_application_credentials = "service-account-file.json";
 
 $get_json_data    = file_get_contents($google_application_credentials);
