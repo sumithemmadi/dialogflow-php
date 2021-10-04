@@ -37,8 +37,9 @@ $config_data = json_decode($config_json, TRUE);
 //Path to GOOGLE_APPLICATION_CREDENTIALS
 $google_application_credentials = $config_data['GOOGLE_APPLICATION_CREDENTIALS'];
 
-$get_json_data = file_get_contents($google_application_credentials);
+$get_json_data    = file_get_contents($google_application_credentials);
 $decode_json_data = json_decode($get_json_data, TRUE);
+$projectId        = $decode_json_data['project_id'];
 
 // Session ID, can be any string for this purpose. However, if you are going to be using the client library to manage an entire conversation, your session_ID must be the same across an entire
 $sessionId= "SET_YOUR_OWN_SESSION_ID"
