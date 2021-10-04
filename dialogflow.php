@@ -75,15 +75,15 @@ if (!empty($data->sender) && !empty($data->message)) {
     $displayName    = $intent->getDisplayName();
     $confidence     = $queryResult->getIntentDetectionConfidence();
     $fulfilmentText = $queryResult->getFulfillmentText();
-    printf('Response\n\n');
-    printf('Fulfilment text: %s\n' . PHP_EOL, $fulfilmentText);
-    printf('Display Name   : %s\n' . PHP_EOL, $displayName);
+    echo 'Response\n\n';
+    printf('Fulfilment text: %s' . PHP_EOL, $fulfilmentText);
+    printf('Display Name   : %s' . PHP_EOL, $displayName);
     
     //print parameters
     if ($response->getQueryResult()->getParameters()->getFields()->count()) {
         foreach ($response->getQueryResult()->getParameters()->getFields() as $key => $value) {
             $params[$key] = $value->serializeToJsonString();
-            printf('Parameter: %s\n\n' . PHP_EOL, $key);
+            printf('Parameter: %s' . PHP_EOL, $key);
             printf('%s' . PHP_EOL, $params[$key]);
             
         }
