@@ -40,7 +40,7 @@ $google_application_credentials = $config_data['GOOGLE_APPLICATION_CREDENTIALS']
 // Dialogflow Session Id
 $dialogflow_session = $config_data['DIALOGFLOW_SESSION_ID'];
 
-// PTOJECT ID
+// PROJECT ID
 $projectId = $config_data['PROJECT_ID'];
 
 //bot name
