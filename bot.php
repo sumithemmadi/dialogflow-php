@@ -35,7 +35,7 @@ $config_json = file_get_contents("config.json");
 $config_data = json_decode($config_json, TRUE);
 
 //Path to GOOGLE_APPLICATION_CREDENTIALS
-$google_application_credentials = $config_data['GOOGLE_APPLICATION_CREDENTIALS'];
+$google_application_credentials = "service-account-file.json";
 
 $get_json_data    = file_get_contents($google_application_credentials);
 $decode_json_data = json_decode($get_json_data, TRUE);
@@ -48,9 +48,6 @@ $sessionId= "SET_YOUR_OWN_SESSION_ID"
 if($sessionId == "SET_YOUR_OWN_SESSION_ID") {
     $sessionId = uniqid('uniqid_');
 }
-
-// PROJECT ID
-$projectId = $config_data['PROJECT_ID'];
 
 $data = json_decode(file_get_contents("php://input"));
 
