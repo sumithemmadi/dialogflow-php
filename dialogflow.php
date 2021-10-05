@@ -63,8 +63,8 @@ function  get_response($projectId,$google_application_credentials, $text, $sessi
     $queryInput->setText($textInput);
 
     // Response
-    $response       = $sessionsClient->detectIntent($session, $queryInput);
-    $json_resp      = $response->serializeToJsonString();
+    $dialogflow_response       = $sessionsClient->detectIntent($session, $queryInput);
+    $json_resp      = $dialogflow_response->serializeToJsonString();
     $json_response  = json_encode(json_decode($json_resp),JSON_PRETTY_PRINT);
     return $json_response;
 }
@@ -79,7 +79,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($data->message)) {
      }
      $text   = $data->message;
      http_response_code(200);
-     echo get_response($projectId,$google_application_credentials, $text, $sessionId);
+     $response = get_response($projectId,$google_application_credentials, $text, $sessionId);
+     echo $response
 } else {
     http_response_code(400);
     // Error
