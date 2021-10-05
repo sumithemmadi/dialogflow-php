@@ -69,13 +69,13 @@ function  get_response($projectId,$google_application_credentials, $text, $sessi
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($data->message)) {
-<!--
+/*
      if(!empty($data->sid)) {
           $sessionId = $data->sid;
      } else {
           $sessionId = uniqid('sid-');
      }
---!>
+*/
      $sessionId  = $data->sid ?: uniqid('sid-');
      $text   = $data->message;
      http_response_code(200);
