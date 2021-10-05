@@ -31,26 +31,17 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 
 // Save Google Account Credentials json file as 'service-account-file.json'
 //make sure that Google Account Credentials JSON file and this file are in same directory.
-
-$data = json_decode(file_get_contents("php://input"));
-
 $google_application_credentials = "service-account-file.json";
 
+//PROJECT ID
 $get_json_data    = file_get_contents($google_application_credentials);
 $decode_json_data = json_decode($get_json_data, TRUE);
 $projectId        = $decode_json_data['project_id'];
 
-/*
-// Session ID, can be any string for this purpose. However, if you are going to be using the client library to manage an entire conversation, your session_ID must be the same across an entire
-// Generate Random Session ID  if `sid` not present in json post request.
-if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($data->sid)) {
-    $sessionId = $data->sid;
-} else {
-    $sessionId = uniqid('sid-');
-}
-*/
+
 $data = json_decode(file_get_contents("php://input"));
 
+// Function to get JSON response.
 function  get_response($projectId,$google_application_credentials, $text, $sessionId) {
     // new session
     $test           = array(
