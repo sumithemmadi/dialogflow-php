@@ -35,17 +35,25 @@ if (class_exists('\Symfony\Component\Dotenv\Dotenv')) {
     if (is_readable(__DIR__.'/.env')) $dotenv->load(__DIR__.'/.env');
 }
 
+
 // Save Google Account Credentials json file as 'service-account-file.json'
 //make sure that Google Account Credentials JSON file and this file are in same directory.
 $google_application_credentials = "service-account-file.json";
 
+
 //PROJECT ID
-$get_json_data    = file_get_contents($google_application_credentials);
-$decode_json_data = json_decode($get_json_data, TRUE);
-$projectId        = $decode_json_data['project_id'];
+if (getenv('PROJECT_ID') != "[YOUR DIALOGFLOW PROJECT ID]") {
+    $get_json_data    = file_get_contents($google_application_credentials);
+    $decode_json_data = json_decode($get_json_data, TRUE);
+    $projectId        = $decode_json_data['project_id'];
+} else {
+    $projectId        = getenv('PROJECT_ID');
+}
+
 
 
 $data = json_decode(file_get_contents("php://input"));
+
 
 // Function to get JSON response.
 function  get_response($projectId,$google_application_credentials, $text, $sessionId) {
