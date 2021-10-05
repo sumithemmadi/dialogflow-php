@@ -3,8 +3,7 @@
                         http://www.apache.org/licenses/
 
    Copyright 2021 sumithemmadi
-
-   Licensed under the Apache License, Version 2.0 (the "License");   you may not use this file except in compliance with the License.
+                                                                     Licensed under the Apache License, Version 2.0 (the "License");   you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
        http://www.apache.org/licenses/LICENSE-2.0
@@ -69,21 +68,20 @@ function  get_response($projectId,$google_application_credentials, $text, $sessi
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($data->message)) {
-/*
      if(!empty($data->sid)) {
+          //sessionId
           $sessionId = $data->sid;
      } else {
+          // Generate Random Session ID if sid object is not found in JSON post request.
           $sessionId = uniqid('sid-');
      }
-*/
-     $sessionId  = $data->sid ?: uniqid('sid-');
      $text   = $data->message;
      http_response_code(200);
      echo get_response($projectId,$google_application_credentials, $text, $sessionId);
+     echo $sessionId;
 } else {
     http_response_code(400);
     // Error
     echo "Error ❌";
 }
-
 ?>
