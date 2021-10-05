@@ -52,9 +52,9 @@ if (getenv('PROJECT_ID') != "[YOUR DIALOGFLOW PROJECT ID]") {
 $data = json_decode(file_get_contents("php://input"));
 
 
-if (!empty($data->sender) && !empty($data->message)) {
-    $sender = $data->sender;
-    $sessionId = $sender;
+if ($_SERVER['REQUEST_METHOD'] && !empty($data->sid) && !empty($data->message)) {
+    
+    $sessionId = $data->sid;
     $text   = $data->message;
     http_response_code(200);
     
