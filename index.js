@@ -21,7 +21,7 @@
 */
 function sendJSON() {
 	let result = document.querySelector('.result');
-	let sender = document.querySelector('#sender');
+	let sid = document.querySelector('#sid');
 	let message = document.querySelector('#message');
 	let xhr = new XMLHttpRequest();
 	let url = "/test.php";
@@ -37,7 +37,7 @@ function sendJSON() {
 	};
 
 	var data = JSON.stringify({
-		"sender": sender.value,
+		"sid": sid.value,
 		"message": message.value
 	});
 	xhr.send(data);
