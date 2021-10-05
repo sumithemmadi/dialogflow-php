@@ -1,6 +1,5 @@
 {
     "require": {
-        "google/cloud-dialogflow": "^0.23.1",
-        "vlucas/phpdotenv": "^5.3"
+        "google/cloud-dialogflow": "^0.23.1"
     }
 }
