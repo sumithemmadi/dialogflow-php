@@ -49,7 +49,7 @@ function  get_response($projectId,$google_application_credentials, $text, $sessi
     );
     $sessionsClient = $sessionId;
     $sessionsClient = new SessionsClient($test);
-    $session        = $sessionsClient->sessionName($projectId, $sessionId ?: uniqid());
+    $session        = $sessionsClient->sessionName($projectId, $sessionId);
 
     // create text input
     $textInput      = new TextInput();
