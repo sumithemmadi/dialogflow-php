@@ -1,5 +1,6 @@
 # dialogflow-php
 - PHP Client Library for Dialogflow API v2
+<!--
 ## Requirements
 
 * [Dialogflow Agent](https://dialogflow.com/docs/reference/v2-agent-setup)
@@ -111,3 +112,4 @@ php -S localhost:8080
    See the License for the specific language governing permissions and
    limitations under the License.
 
+-->
