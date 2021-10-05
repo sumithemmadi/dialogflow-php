@@ -1,17 +1,12 @@
-<?php
-/*
-                                 Apache License
+<?php                  
+/*                              Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/
-
    Copyright 2021 sumithemmadi
-
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
-
        http://www.apache.org/licenses/LICENSE-2.0
-
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -23,6 +18,8 @@ namespace Google\Cloud\Samples\Dialogflow;
 use Google\Cloud\Dialogflow\V2\SessionsClient;
 use Google\Cloud\Dialogflow\V2\TextInput;
 use Google\Cloud\Dialogflow\V2\QueryInput;
+use Symfony\Component\Dotenv\Dotenv;
+
 require __DIR__ . '/vendor/autoload.php';
 
 header("Access-Control-Allow-Origin: *");
@@ -31,16 +28,29 @@ header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
+// Load env vars from .env
+if (class_exists('\Symfony\Component\Dotenv\Dotenv')) {
+    $dotenv = new \Symfony\Component\Dotenv\Dotenv();
+    if (is_readable(__DIR__.'/.env')) $dotenv->load(__DIR__.'/.env');
+}
+
 
 // Save Google Account Credentials json file as 'service-account-file.json'
 //make sure that Google Account Credentials JSON file and this file are in same directory.
-$google_application_credentials = "service-account-file.json";
+$google_application_credentials = getenv('GOOGLE_APPLICATION_CREDENTIALS');
 
-$get_json_data    = file_get_contents($google_application_credentials);
-$decode_json_data = json_decode($get_json_data, TRUE);
-$projectId        = $decode_json_data['project_id'];
+
+//PROJECT ID
+if (getenv('PROJECT_ID') != "[YOUR DIALOGFLOW PROJECT ID]") {
+    $get_json_data    = file_get_contents($google_application_credentials);
+    $decode_json_data = json_decode($get_json_data, TRUE);
+    $projectId        = $decode_json_data['project_id'];
+} else {
+    $projectId        = getenv('PROJECT_ID');
+}
 
 $data = json_decode(file_get_contents("php://input"));
+
 
 if (!empty($data->sender) && !empty($data->message)) {
     $sender = $data->sender;
