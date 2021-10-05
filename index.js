@@ -42,3 +42,12 @@ function sendJSON() {
 	});
 	xhr.send(data);
 }
+function validate_json(data) {
+        try {
+            JSON.parse(data);
+        } catch (e) {
+            return false;
+        }
+        return true;
+}
+
