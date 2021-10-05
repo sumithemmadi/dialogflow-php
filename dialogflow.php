@@ -80,7 +80,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($data->message)) {
      $text   = $data->message;
      http_response_code(200);
      echo get_response($projectId,$google_application_credentials, $text, $sessionId);
-     echo $sessionId;
 } else {
     http_response_code(400);
     // Error
