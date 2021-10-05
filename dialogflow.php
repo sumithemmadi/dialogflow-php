@@ -38,7 +38,7 @@ if (class_exists('\Symfony\Component\Dotenv\Dotenv')) {
 
 // Save Google Account Credentials json file as 'service-account-file.json'
 //make sure that Google Account Credentials JSON file and this file are in same directory.
-$google_application_credentials = "service-account-file.json";
+$google_application_credentials = 
 
 
 //PROJECT ID
@@ -77,6 +77,7 @@ function  get_response($projectId,$google_application_credentials, $text, $sessi
 
     // Response
     $dialogflow_response       = $sessionsClient->detectIntent($session, $queryInput);
+    $sessionsClient->close()
     $json_resp      = $dialogflow_response->serializeToJsonString();
     $json_response  = json_encode(json_decode($json_resp),JSON_PRETTY_PRINT);
     return $json_response;
