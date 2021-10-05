@@ -38,7 +38,7 @@ if (class_exists('\Symfony\Component\Dotenv\Dotenv')) {
 
 // Save Google Account Credentials json file as 'service-account-file.json'
 //make sure that Google Account Credentials JSON file and this file are in same directory.
-$google_application_credentials = 
+$google_application_credentials = getenv('GOOGLE_APPLICATION_CREDENTIALS');
 
 
 //PROJECT ID
