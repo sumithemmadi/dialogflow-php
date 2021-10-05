@@ -21,6 +21,8 @@ namespace Google\Cloud\Samples\Dialogflow;
 use Google\Cloud\Dialogflow\V2\SessionsClient;
 use Google\Cloud\Dialogflow\V2\TextInput;
 use Google\Cloud\Dialogflow\V2\QueryInput;
+use Symfony\Component\Dotenv\Dotenv;
+
 require __DIR__ . '/vendor/autoload.php';
 
 header("Access-Control-Allow-Origin: *");
@@ -77,7 +79,6 @@ function  get_response($projectId,$google_application_credentials, $text, $sessi
 
     // Response
     $dialogflow_response       = $sessionsClient->detectIntent($session, $queryInput);
-    $sessionsClient->close()
     $json_resp      = $dialogflow_response->serializeToJsonString();
     $json_response  = json_encode(json_decode($json_resp),JSON_PRETTY_PRINT);
     return $json_response;
