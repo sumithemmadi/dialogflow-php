@@ -29,6 +29,7 @@ header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
+// Load env vars from .env
 if (class_exists('\Symfony\Component\Dotenv\Dotenv')) {
     $dotenv = new \Symfony\Component\Dotenv\Dotenv();
     if (is_readable(__DIR__.'/.env')) $dotenv->load(__DIR__.'/.env');
