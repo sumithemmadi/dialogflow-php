@@ -1,6 +1,6 @@
 # dialogflow-php
 - PHP Client Library for Dialogflow API v2
-<!--
+
 ## Requirements
 
 * [Dialogflow Agent](https://dialogflow.com/docs/reference/v2-agent-setup)
@@ -9,6 +9,41 @@
 * [Composer](https://getcomposer.org/)
 
 ## Installation
+### Create a project
+- To use services provided by Google Cloud, you must create a project. A project organizes all your Google Cloud resources. A project consists of a set of collaborators, enabled APIs (and other resources), monitoring tools, billing information, and authentication and access controls. You can create one project, or you can create multiple projects and use them to organize your Google Cloud resources in a resource hierarchy. When creating a project, take note of the project ID. You will need this ID to make API calls. For more information on projects, see the [Resource Manager documentation](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
+- In the Google Cloud Console, on the project selector page, select or create a Google Cloud project,[Go to project selector](https://console.cloud.google.com/projectselector2/home/dashboard)
+### Enable the API
+> Note: You can skip this step if you are using the Dialogflow Console to create your project.
+You must enable the Dialogflow API for your project. For more information on enabling APIs, see the Service Usage documentation.
+
+- [Enable the Dialogflow API](https://console.cloud.google.com/flows/enableapi?apiid=dialogflow.googleapis.com)
+### Create a service account and download the private key file
+Create a service account:
+
+- In the Cloud Console, go to the Create service account page.
+
+- [Go to Create service account](https://console.cloud.google.com/projectselector/iam-admin/serviceaccounts/create?supportedpurview=project)
+- Select a project.
+- In the Service account name field, enter a name. The Cloud Console fills in the `Service account ID` field based on this name.
+- In the Service account description field, enter a description. For example, `Service account for quickstart`.
+- Click Create and continue.
+- Click the Select a role field.
+
+- Under Quick access, click Basic, then click Owner.
+
+> Note: The Role field affects which resources your service account can access in your project. You can revoke these roles or grant additional roles later. In production environments, do not grant the Owner, Editor, or Viewer roles. Instead, grant a predefined role or custom role that meets your needs.
+- Click Continue.
+- Click Done to finish creating the service account.
+- Do not close your browser window. You will use it in the next step.
+> Note: The Role field affects which resources your service account can access in your project. You can revoke these roles or grant additional roles later. In production environments, do not grant the Owner, Editor, or Viewer roles. Instead, grant a predefined role or custom role that meets your needs.
+- Click Continue.
+- Click Done to finish creating the service account.
+
+- Do not close your browser window. You will use it in the next step.
+
+
+
+
 
 - To begin, lets clone this repository
 ```bash
@@ -112,4 +147,3 @@ php -S localhost:8080
    See the License for the specific language governing permissions and
    limitations under the License.
 
--->
