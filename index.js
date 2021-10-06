@@ -24,7 +24,7 @@ function sendJSON() {
 	let sid = document.querySelector('#sid');
 	let message = document.querySelector('#message');
 	let xhr = new XMLHttpRequest();
-	let url = "/test.php";
+	let url = "/dialogflow.php";
 
 	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-Type", "application/json");
