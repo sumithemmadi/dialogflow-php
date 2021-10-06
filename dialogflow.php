@@ -84,7 +84,7 @@ function  get_response($projectId,$google_application_credentials, $text, $sessi
     return $json_response;
 }
 
-function  get_response($projectId,$google_application_credentials, $text, $sessionId) {
+function  get_resp($projectId,$google_application_credentials, $text, $sessionId) {
     // new session
     $sessionId = $data->sid;
     $text   = $data->message;
