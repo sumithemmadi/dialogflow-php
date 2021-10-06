@@ -9,45 +9,105 @@
 * [Composer](https://getcomposer.org/)
 
 ## Installation
-### Create a project
-- To use services provided by Google Cloud, you must create a project. A project organizes all your Google Cloud resources. A project consists of a set of collaborators, enabled APIs (and other resources), monitoring tools, billing information, and authentication and access controls. You can create one project, or you can create multiple projects and use them to organize your Google Cloud resources in a resource hierarchy. When creating a project, take note of the project ID. You will need this ID to make API calls. For more information on projects, see the [Resource Manager documentation](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
-- In the Google Cloud Console, on the project selector page, select or create a Google Cloud project,[Go to project selector](https://console.cloud.google.com/projectselector2/home/dashboard)
-### Enable the API
-> Note: You can skip this step if you are using the Dialogflow Console to create your project.
-You must enable the Dialogflow API for your project. For more information on enabling APIs, see the Service Usage documentation.
+<details>
+<h3 id="create-a-project">Create a project</h3>
+<ul>
+<li>To use services provided by Google Cloud, you must create a project. A project organizes all your Google Cloud resources. A project consists of a set of collaborators, enabled APIs (and other resources), monitoring tools, billing information, and authentication and access controls. You can create one project, or you can create multiple projects and use them to organize your Google Cloud resources in a resource hierarchy. When creating a project, take note of the project ID. You will need this ID to make API calls. For more information on projects, see the <a href="https://cloud.google.com/resource-manager/docs/creating-managing-projects">Resource Manager documentation</a>.</li>
+<li><p>In the Google Cloud Console, on the project selector page, select or create a Google Cloud project,<a href="https://console.cloud.google.com/projectselector2/home/dashboard">Go to project selector</a></p>
+<h3 id="enable-the-api">Enable the API</h3>
+<blockquote>
+<p>Note: You can skip this step if you are using the Dialogflow Console to create your project.
+You must enable the Dialogflow API for your project. For more information on enabling APIs, see the Service Usage documentation.</p>
+</blockquote>
+</li>
+<li><p><a href="https://console.cloud.google.com/flows/enableapi?apiid=dialogflow.googleapis.com">Enable the Dialogflow API</a></p>
+<h3 id="create-a-service-account-and-download-the-private-key-file">Create a service account and download the private key file</h3>
+<p>Create a service account:</p>
+</li>
+<li><p>In the Cloud Console, go to the Create service account page.</p>
+</li>
+<li><p><a href="https://console.cloud.google.com/projectselector/iam-admin/serviceaccounts/create?supportedpurview=project">Go to Create service account</a></p>
+</li>
+<li>Select a project.</li>
+<li>In the Service account name field, enter a name. The Cloud Console fills in the <code>Service account ID</code> field based on this name.</li>
+<li>In the Service account description field, enter a description. For example, <code>Service account for quickstart</code>.</li>
+<li>Click Create and continue.</li>
+<li><p>Click the Select a role field.</p>
+</li>
+<li><p>Under Quick access, click Basic, then click Owner.</p>
+</li>
+</ul>
+<blockquote>
+<p>Note: The Role field affects which resources your service account can access in your project. You can revoke these roles or grant additional roles later. In production environments, do not grant the Owner, Editor, or Viewer roles. Instead, grant a predefined role or custom role that meets your needs.</p>
+<ul>
+<li>Click Continue.</li>
+<li>Click Done to finish creating the service account.</li>
+<li>Do not close your browser window. You will use it in the next step.
+Note: The Role field affects which resources your service account can access in your project. You can revoke these roles or grant additional roles later. In production environments, do not grant the Owner, Editor, or Viewer roles. Instead, grant a predefined role or custom role that meets your needs.</li>
+<li>Click Continue.</li>
+<li>Click Done to finish creating the service account.</li>
+</ul>
+</blockquote>
+<ul>
+<li>Do not close your browser window. You will use it in the next step.<h3 id="create-a-service-account-key-">Create a service account key:</h3>
+</li>
+</ul>
+<p>In the Cloud Console, click the email address for the service account that you created.</p>
+<ul>
+<li>Click Keys.</li>
+<li>Click Add key, then click Create new key.</li>
+<li>Click Create. A JSON key file is downloaded to your computer.</li>
+<li>Click Close.<h3 id="create-a-project">Create a project</h3>
+</li>
+<li>To use services provided by Google Cloud, you must create a project. A project organizes all your Google Cloud resources. A project consists of a set of collaborators, enabled APIs (and other resources), monitoring tools, billing information, and authentication and access controls. You can create one project, or you can create multiple projects and use them to organize your Google Cloud resources in a resource hierarchy. When creating a project, take note of the project ID. You will need this ID to make API calls. For more information on projects, see the <a href="https://cloud.google.com/resource-manager/docs/creating-managing-projects">Resource Manager documentation</a>.</li>
+<li><p>In the Google Cloud Console, on the project selector page, select or create a Google Cloud project,<a href="https://console.cloud.google.com/projectselector2/home/dashboard">Go to project selector</a></p>
+<h3 id="enable-the-api">Enable the API</h3>
+<blockquote>
+<p>Note: You can skip this step if you are using the Dialogflow Console to create your project.
+You must enable the Dialogflow API for your project. For more information on enabling APIs, see the Service Usage documentation.</p>
+</blockquote>
+</li>
+<li><p><a href="https://console.cloud.google.com/flows/enableapi?apiid=dialogflow.googleapis.com">Enable the Dialogflow API</a></p>
+<h3 id="create-a-service-account-and-download-the-private-key-file">Create a service account and download the private key file</h3>
+<p>Create a service account:</p>
+</li>
+<li><p>In the Cloud Console, go to the Create service account page.</p>
+</li>
+<li><p><a href="https://console.cloud.google.com/projectselector/iam-admin/serviceaccounts/create?supportedpurview=project">Go to Create service account</a></p>
+</li>
+<li>Select a project.</li>
+<li>In the Service account name field, enter a name. The Cloud Console fills in the <code>Service account ID</code> field based on this name.</li>
+<li>In the Service account description field, enter a description. For example, <code>Service account for quickstart</code>.</li>
+<li>Click Create and continue.</li>
+<li><p>Click the Select a role field.</p>
+</li>
+<li><p>Under Quick access, click Basic, then click Owner.</p>
+</li>
+</ul>
+<blockquote>
+<p>Note: The Role field affects which resources your service account can access in your project. You can revoke these roles or grant additional roles later. In production environments, do not grant the Owner, Editor, or Viewer roles. Instead, grant a predefined role or custom role that meets your needs.</p>
+<ul>
+<li>Click Continue.</li>
+<li>Click Done to finish creating the service account.</li>
+<li>Do not close your browser window. You will use it in the next step.
+Note: The Role field affects which resources your service account can access in your project. You can revoke these roles or grant additional roles later. In production environments, do not grant the Owner, Editor, or Viewer roles. Instead, grant a predefined role or custom role that meets your needs.</li>
+<li>Click Continue.</li>
+<li>Click Done to finish creating the service account.</li>
+</ul>
+</blockquote>
+<ul>
+<li>Do not close your browser window. You will use it in the next step.<h3 id="create-a-service-account-key-">Create a service account key:</h3>
+</li>
+</ul>
+<p>In the Cloud Console, click the email address for the service account that you created.</p>
+<ul>
+<li>Click Keys.</li>
+<li>Click Add key, then click Create new key.</li>
+<li>Click Create. A JSON key file is downloaded to your computer.</li>
+<li>Click close </li>
+</ul>
 
-- [Enable the Dialogflow API](https://console.cloud.google.com/flows/enableapi?apiid=dialogflow.googleapis.com)
-### Create a service account and download the private key file
-Create a service account:
-
-- In the Cloud Console, go to the Create service account page.
-
-- [Go to Create service account](https://console.cloud.google.com/projectselector/iam-admin/serviceaccounts/create?supportedpurview=project)
-- Select a project.
-- In the Service account name field, enter a name. The Cloud Console fills in the `Service account ID` field based on this name.
-- In the Service account description field, enter a description. For example, `Service account for quickstart`.
-- Click Create and continue.
-- Click the Select a role field.
-
-- Under Quick access, click Basic, then click Owner.
-
-> Note: The Role field affects which resources your service account can access in your project. You can revoke these roles or grant additional roles later. In production environments, do not grant the Owner, Editor, or Viewer roles. Instead, grant a predefined role or custom role that meets your needs.
-- Click Continue.
-- Click Done to finish creating the service account.
-- Do not close your browser window. You will use it in the next step.
-> Note: The Role field affects which resources your service account can access in your project. You can revoke these roles or grant additional roles later. In production environments, do not grant the Owner, Editor, or Viewer roles. Instead, grant a predefined role or custom role that meets your needs.
-- Click Continue.
-- Click Done to finish creating the service account.
-
-- Do not close your browser window. You will use it in the next step.
-### Create a service account key:
-
-In the Cloud Console, click the email address for the service account that you created.
-- Click Keys.
-- Click Add key, then click Create new key.
-- Click Create. A JSON key file is downloaded to your computer.
-- Click Close.
-
+</details>
 
 
 
