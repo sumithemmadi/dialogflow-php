@@ -44,7 +44,7 @@ $google_application_credentials = getenv('GOOGLE_APPLICATION_CREDENTIALS');
 
 
 //PROJECT ID
-if (getenv('PROJECT_ID') != "[YOUR DIALOGFLOW PROJECT ID]") {
+if (getenv('PROJECT_ID') != "[PROJECT_ID]") {
     $get_json_data    = file_get_contents($google_application_credentials);
     $decode_json_data = json_decode($get_json_data, TRUE);
     $projectId        = $decode_json_data['project_id'];
