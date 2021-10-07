@@ -39,6 +39,7 @@ You must enable the Dialogflow API for your project. For more information on ena
 </ul>
 <blockquote>
 <p>Note: The Role field affects which resources your service account can access in your project. You can revoke these roles or grant additional roles later. In production environments, do not grant the Owner, Editor, or Viewer roles. Instead, grant a predefined role or custom role that meets your needs.</p>
+</blockquote>
 <ul>
 <li>Click Continue.</li>
 <li>Click Done to finish creating the service account.</li>
@@ -47,7 +48,6 @@ Note: The Role field affects which resources your service account can access in 
 <li>Click Continue.</li>
 <li>Click Done to finish creating the service account.</li>
 </ul>
-</blockquote>
 <ul>
 <li>Do not close your browser window. You will use it in the next step.<h3 id="create-a-service-account-key-">Create a service account key:</h3>
 </li>
@@ -86,6 +86,7 @@ You must enable the Dialogflow API for your project. For more information on ena
 </ul>
 <blockquote>
 <p>Note: The Role field affects which resources your service account can access in your project. You can revoke these roles or grant additional roles later. In production environments, do not grant the Owner, Editor, or Viewer roles. Instead, grant a predefined role or custom role that meets your needs.</p>
+</blockquote>
 <ul>
 <li>Click Continue.</li>
 <li>Click Done to finish creating the service account.</li>
@@ -94,7 +95,7 @@ Note: The Role field affects which resources your service account can access in 
 <li>Click Continue.</li>
 <li>Click Done to finish creating the service account.</li>
 </ul>
-</blockquote>
+
 <ul>
 <li>Do not close your browser window. You will use it in the next step.<h3 id="create-a-service-account-key-">Create a service account key:</h3>
 </li>
