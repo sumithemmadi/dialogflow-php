@@ -51,16 +51,12 @@
   <span> You can skip this step if you are using the Dialogflow Console to create your project.</span>
 </aside>
 <p>
-<p> You must enable the Dialogflow API for your project. For more information on enabling APIs, see the <a href="/service-usage/docs/enable-disable">Service Usage documentation</a>. </p> Enable the Dialogflow API. <p>
+<p> You must enable the Dialogflow API for your project. For more information on enabling APIs, see the <a href="/service-usage/docs/enable-disable">Service Usage documentation</a>. 
+<img src="https://user-images.githubusercontent.com/50250422/135780264-48c383ce-7942-418f-baf8-703b5257fd30.png"></img>
+</p> Enable the Dialogflow API. <p>
   <a href="https://console.cloud.google.com/flows/enableapi?apiid=dialogflow.googleapis.com" target="console" track-type="commonIncludes" track-name="consoleLink" track-metadata-end-goal="enableAPI" class="button button-primary">Enable the API</a>
 </p>
-<style>
-  .henhouse-text {
-    font-size: 85%;
-    padding: 2px 4px;
-    line-height: 1;
-  }
-</style>
+
 </p>
 <h2 id="audit-logs" data-text="Enable audit logs">Enable audit logs</h2>
 <aside class="note">
