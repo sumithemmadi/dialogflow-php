@@ -87,6 +87,7 @@
 </p>
 <h3 id="sa-create" data-text="Create a service account and download the private key file">Create a service account and download the private key file</h3>
 <p>
+<img src="https://user-images.githubusercontent.com/50250422/135780322-ed003c6f-cf2e-47dd-9c0f-e176e90fc91c.png"></img>
 <p> Create a service account: </p>
 <ol>
   <li>
@@ -118,6 +119,7 @@
   <li> Click <b>Keys</b>. </li>
   <li> Click <b>Add key</b>, then click <b>Create new key</b>. </li>
   <li> Click <b>Create</b>. A JSON key file is downloaded to your computer. </li>
+  <img src="https://user-images.githubusercontent.com/50250422/135780443-9d351d03-405c-49a4-9317-9131bab92041.png"></img>
   <li> Click <b>Close</b>. </li>
 </ol>
 </p>
