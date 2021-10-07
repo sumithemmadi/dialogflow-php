@@ -100,7 +100,9 @@ Note: The Role field affects which resources your service account can access in 
 <li>Do not close your browser window. You will use it in the next step.<h3 id="create-a-service-account-key-">Create a service account key:</h3>
 </li>
 </ul>
-<p>In the Cloud Console, click the email address for the service account that you created.</p>
+<ul>
+<li>In the Cloud Console, click the email address for the service account that you created.</li>
+</ul>
 <ul>
 <li>Click Keys.</li>
 <li>Click Add key, then click Create new key.</li>
