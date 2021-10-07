@@ -25,7 +25,7 @@ composer install
 ```bash
 composer require google/cloud-dialogflow
 ```
-<details>
+
 <h2 id="before" data-text="Before you begin">Before you begin</h2>
 <p>You should do the following before reading this guide:</p>
 <ol>
@@ -139,21 +139,25 @@ composer require google/cloud-dialogflow
   <li> Click <b>Close</b>. </li>
 </ol>
 </p>
-</details>
 
+<!--
 ## Usage
-- Download the Google Account Credentials JSON file for your v2 Dialogflow agent into the diaglogflow-php folder
 
-- Make sure v2 API is enabled in Dialogflow
+Download the Google Account Credentials JSON file for your v2 Dialogflow agent into the diaglogflow-php folder
+
+Make sure v2 API is enabled in Dialogflow
 ![client_secret_json_download_1](https://user-images.githubusercontent.com/50250422/135780264-48c383ce-7942-418f-baf8-703b5257fd30.png)
-- Click on the service account email address.
-- You will be taken to the Google Cloud Console.
-- Click on the Create Service Account link at the top of the console menu
-- Provide a suitable name for the service account
-- Select Project -> Owner in the Role dropdown box
-- Make sure you check the Furnish a new private key box. Keep the key type as JSON
+Click on the service account email address.
+You will be taken to the Google Cloud Console.
+Click on the Create Service Account link at the top of the console menu
+
+Provide a suitable name for the service account
+
+Select Project -> Owner in the Role dropdown box
+Make sure you check the Furnish a new private key box. Keep the key type as JSON
 ![client_secret_json_download_2](https://user-images.githubusercontent.com/50250422/135780322-ed003c6f-cf2e-47dd-9c0f-e176e90fc91c.png)
 - Click on the create
+-->
 ![create_key_slideout](https://user-images.githubusercontent.com/50250422/135780443-9d351d03-405c-49a4-9317-9131bab92041.png)
 - You will be prompted to save the Google Account Credentials JSON file. Save the file as `service-account-file.json` to the dialogflow-php folder.
 > Make sure that `service-account-file.json` file is in  main directory
