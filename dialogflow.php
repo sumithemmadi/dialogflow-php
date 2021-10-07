@@ -84,58 +84,6 @@ function  get_response($projectId,$google_application_credentials, $text, $sessi
     return $json_response;
 }
 
-function  get_resp($projectId,$google_application_credentials, $text, $sessionId) {
-    // new session
-    $sessionId = $data->sid;
-    $text   = $data->message;
-    http_response_code(200);
-    
-    // new session
-    $test           = array(
-        'credentials' => $google_application_credentials
-    );
-    $sessionsClient = $sessionId;
-    $sessionsClient = new SessionsClient($test);
-    $session        = $sessionsClient->sessionName($projectId, $sessionId ?: uniqid());
-
-    // create text input
-    $textInput      = new TextInput();
-    $textInput->setText($text);
-    $textInput->setLanguageCode('en-US');
-
-    // create query input
-    $queryInput = new QueryInput();
-    $queryInput->setText($textInput);
-    
-    // Response
-    $response       = $sessionsClient->detectIntent($session, $queryInput);
-    $json_response  = $response->serializeToJsonString();
-    $queryResult    = $response->getQueryResult();
-    $queryText      = $queryResult->getQueryText();
-    $intent         = $queryResult->getIntent();
-    $displayName    = $intent->getDisplayName();
-    $confidence     = $queryResult->getIntentDetectionConfidence();
-    $fulfilmentText = $queryResult->getFulfillmentText();
-    
-    //print JSON response
-    //printf('%s' . PHP_EOL,json_encode(json_decode($json_response),JSON_PRETTY_PRINT));
-    // print response
-    printf("<h3>RESPONSE</h3>");
-    printf("<b>Fulfilment Text</b>: %s<br>" . PHP_EOL, $fulfilmentText);
-    printf("<b>Display Name   </b>: %s<br>" . PHP_EOL, $displayName);
-    printf("<b>Query Text     </b>: %s<br>" . PHP_EOL, $queryText);
-
-    //print parameters
-    if ($response->getQueryResult()->getParameters()->getFields()->count()) {
-        foreach ($response->getQueryResult()->getParameters()->getFields() as $key => $value) {
-            $params[$key] = $value->serializeToJsonString();
-            printf("<h3>PARAMETERS</h3>");
-            printf("<b>Parameter</b>: %s<br>" . PHP_EOL, $key);
-            printf("%s<br>" . PHP_EOL, json_encode(json_decode($params[$key]),JSON_PRETTY_PRINT));
-        }
-    }
-} 
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($data->message)) {
      if(!empty($data->sid)) {
           //sessionId
