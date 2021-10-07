@@ -61,6 +61,7 @@ composer require google/cloud-dialogflow
 </p> Enable the Dialogflow API. <p>
   <a href="https://console.cloud.google.com/flows/enableapi?apiid=dialogflow.googleapis.com" target="console" track-type="commonIncludes" track-name="consoleLink" track-metadata-end-goal="enableAPI" class="button button-primary">Enable the API</a>
 </p>
+<p><a href="https://console.cloud.google.com/flows/enableapi?apiid=dialogflow.googleapis.com"><img src="https://user-images.githubusercontent.com/50250422/136429965-80c2c18a-6e87-4ee3-962b-3431717585e1.jpg" height=40px width=170px alt="image"></a></p>
 
 <h3 id="sa-create" data-text="Create a service account and download the private key file">Create a service account and download the private key file</h3>
 <p>
