@@ -45,7 +45,7 @@ composer require google/cloud-dialogflow
   <a href="https://console.cloud.google.com/projectselector2/home/dashboard" target="console" track-type="commonIncludes" track-name="consoleLink" track-metadata-end-goal="createProject" class="button button-primary">Go to project selector</a>
 </p>
 </p>
-<p><a href="https://console.cloud.google.com/projectselector2/home/dashboard"><img src="https://user-images.githubusercontent.com/50250422/136431172-4ce05936-9739-47de-a8f2-b5a33103f827.jpg" height=45px width=220px alt="image"></a></p>
+<p><a href="https://console.cloud.google.com/projectselector2/home/dashboard"><img src="https://user-images.githubusercontent.com/50250422/136431172-4ce05936-9739-47de-a8f2-b5a33103f827.jpg" height=40px width=200px alt="image"></a></p>
 
 <aside class="warning">
   <strong>Warning:</strong>
