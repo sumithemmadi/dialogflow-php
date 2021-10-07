@@ -9,6 +9,22 @@
 * [Composer](https://getcomposer.org/)
 
 ## Installation
+
+- To begin, lets clone this repository
+```bash
+git clone https://github.com/sumithemmadi/dialogflow-php.git
+cd dialogflow-php
+```
+- Then  install the preferred dependencies for Dialogflow.
+
+```bash
+composer install
+```
+
+- Or install latest version with below command:
+```bash
+composer require google/cloud-dialogflow
+```
 <details>
 <h2 id="before" data-text="Before you begin">Before you begin</h2>
 <p>You should do the following before reading this guide:</p>
@@ -124,25 +140,6 @@
 </ol>
 </p>
 </details>
-
-
-
-- To begin, lets clone this repository
-```bash
-git clone https://github.com/sumithemmadi/dialogflow-php.git
-cd dialogflow-php
-```
-- Then  install the preferred dependencies for Dialogflow.
-
-```bash
-composer install
-```
-
-- Or install latest version with below command:
-```bash
-composer require google/cloud-dialogflow
-```
-
 ## Usage
 - Download the Google Account Credentials JSON file for your v2 Dialogflow agent into the diaglogflow-php folder
 
