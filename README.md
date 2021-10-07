@@ -73,6 +73,7 @@ composer require google/cloud-dialogflow
   <li>
     <p> In the Cloud Console, go to the <b>Create service account</b> page. </p>
     <a href="https://console.cloud.google.com/projectselector/iam-admin/serviceaccounts/create?supportedpurview=project" class="button button-primary" target="console" track-name="consoleLink" track-type="quickstart" track-metadata-position="body">Go to Create service account</a>
+    <p><a href="https://console.cloud.google.com/projectselector/iam-admin/serviceaccounts/create?supportedpurview=project"><img src="https://user-images.githubusercontent.com/50250422/136433280-d2d716a3-adcf-451a-90ac-f9a213e2ace6.jpg" height=40px width=200px alt="image"></a></p>
   </li>
   <li> Select a project. </li>
   <li>
