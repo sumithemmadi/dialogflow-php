@@ -129,11 +129,11 @@ Make sure you check the Furnish a new private key box. Keep the key type as JSON
 ## Usage
 ```sh
 curl -Xs POST http://localhost:8080/dialogflow.php \
--d '{"sender":"sumith","message":"my name is sumith"}'
+-d '{"sid":"12345678","message":"my name is sumith"}'
 ```
 ```sh
 ~$ curl -sX POST http://localhost:8080/dialogflow.php \
--d '{"sender":"sumith","message":"my name is sumith"}'
+-d '{"sid":"12345678","message":"my name is sumith"}'
 
 {
     "responseId": "f7f810a1-0043-4f85-ac6c-241705aa6b8a-94f60986",
