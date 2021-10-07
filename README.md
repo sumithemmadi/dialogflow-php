@@ -118,11 +118,12 @@ Select Project -> Owner in the Role dropdown box
 Make sure you check the Furnish a new private key box. Keep the key type as JSON
 ![client_secret_json_download_2](https://user-images.githubusercontent.com/50250422/135780322-ed003c6f-cf2e-47dd-9c0f-e176e90fc91c.png)
 - Click on the create
--->
+
 ![create_key_slideout](https://user-images.githubusercontent.com/50250422/135780443-9d351d03-405c-49a4-9317-9131bab92041.png)
 - You will be prompted to save the Google Account Credentials JSON file. Save the file as `service-account-file.json` to the dialogflow-php folder.
 > Make sure that `service-account-file.json` file is in  main directory
 - Now create a web server and send a post request.
+-->
 ```sh
 curl -Xs POST http://localhost:8080/dialogflow.php \
 -d '{"sender":"sumith","message":"my name is sumith"}'
