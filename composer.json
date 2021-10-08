@@ -1,6 +1,7 @@
 {
     "require": {
         "google/cloud-dialogflow": "^0.23.1",
-        "symfony/dotenv": "^5.3"
+        "symfony/dotenv": "^5.3",
+        "phpseclib/bcmath_compat": "^2.0"
     }
 }
