@@ -42,16 +42,8 @@ if (class_exists('\Symfony\Component\Dotenv\Dotenv')) {
 //make sure that Google Account Credentials JSON file and this file are in same directory.
 $google_application_credentials = getenv('GOOGLE_APPLICATION_CREDENTIALS');
 
-
 //PROJECT ID
-if (getenv('PROJECT_ID') != "[PROJECT_ID]") {
-    $get_json_data    = file_get_contents($google_application_credentials);
-    $decode_json_data = json_decode($get_json_data, TRUE);
-    $projectId        = $decode_json_data['project_id'];
-} else {
-    $projectId        = getenv('PROJECT_ID');
-}
-
+$projectId        = getenv('PROJECT_ID');
 
 
 $data = json_decode(file_get_contents("php://input"));
