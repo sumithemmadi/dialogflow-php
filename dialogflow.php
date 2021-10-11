@@ -33,11 +33,11 @@ header(
 
 // Save Google Account Credentials json file as 'service-account-file.json'
 //make sure that Google Account Credentials JSON file and this file are in same directory.
-$google_application_credentials = "service-account-file.json";
+$google_application_credentials = "[GOOGLE_APPLICATION_CREDENTIALS_FILENAME]";
 
 //PROJECT ID
 // Please Change "[ENTER_PROJECT_ID]" with you dialogflow project ID
-$projectId = "sumith-bot";
+$projectId = "[ENTER_PROJECT_ID]";
 
 if (
     $google_application_credentials ==
