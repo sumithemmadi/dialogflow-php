@@ -40,18 +40,18 @@ $google_application_credentials = "[GOOGLE_APPLICATION_CREDENTIALS_FILENAME]";
 $projectId        = "[ENTER_PROJECT_ID]";
 
 if ( $google_application_credentials == "[GOOGLE_APPLICATION_CREDENTIALS_FILENAME]" && $projectId == "[ENTER_PROJECT_ID]" ) {
-    echo "Please enter the filename of Google Account Credentials JSON file in dialogflow.php file at LINE NO : 36\n";
-    echo "Please enter project ID in dialogflow.php file at LINE NO : 40\n";
+    echo "1 . Please enter the filename of Google Account Credentials JSON file in dialogflow.php file at LINE NO : 36\n";
+    echo "2 . Please enter project ID in dialogflow.php file at LINE NO : 40\n";
     exit();
 }
 
 if ( $google_application_credentials == "[GOOGLE_APPLICATION_CREDENTIALS_FILENAME]") {
-    echo "Please enter the filename of Google Account Credentials JSON file in dialogflow.php file at LINE NO : 36";
+    echo "1 . Please enter the filename of Google Account Credentials JSON file in dialogflow.php file at LINE NO : 36";
     exit();
 }
 
 if ($projectId == "[ENTER_PROJECT_ID]") {
-    echo "Please enter project ID in dialogflow.php file at LINE NO : 40";
+    echo "1 . Please enter project ID in dialogflow.php file at LINE NO : 40";
     exit();
 }
 
