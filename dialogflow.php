@@ -33,10 +33,10 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 
 // Save Google Account Credentials json file as 'service-account-file.json'
 //make sure that Google Account Credentials JSON file and this file are in same directory.
-$google_application_credentials = getenv('GOOGLE_APPLICATION_CREDENTIALS');
+$google_application_credentials = [GOOGLE_APPLICATION_CREDENTIALS'];
 
 //PROJECT ID
-$projectId        = getenv('PROJECT_ID');
+$projectId        = [ENTER_PROJECT_ID];
 
 
 $data = json_decode(file_get_contents("php://input"));
