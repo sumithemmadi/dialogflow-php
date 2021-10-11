@@ -39,12 +39,12 @@ $google_application_credentials = "[GOOGLE_APPLICATION_CREDENTIALS_FILENAME]";
 $projectId        = "[ENTER_PROJECT_ID]";
 
 if ( $google_application_credentials == "[GOOGLE_APPLICATION_CREDENTIALS_FILENAME]") {
-    echo "Please Enter "GOOGLE_APPLICATION_CREDENTIALS_FILENAME" name in dialogflow.php file";
+    echo "Please Enter GOOGLE_APPLICATION_CREDENTIALS_FILENAME name in dialogflow.php file";
     exit();
 }
 
 if ($projectId == "[ENTER_PROJECT_ID]") {
-    echo "Please Enter "ENTER_PROJECT_ID" name in dialogflow.php file";
+    echo "Please Enter ENTER_PROJECT_ID name in dialogflow.php file";
     exit();
 }
 
