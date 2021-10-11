@@ -12,7 +12,13 @@
     "license": "MIT",
     "require": {
         "php": ">=5.4",
+        "google/cloud-dialogflow": "^0.23.1",
+        "phpseclib/bcmath_compat": "^2.0",
         "nesbot/carbon": "1.* || 2.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.8",
+        "clean/phpdoc-md": "^0.10.0"
     },
     "autoload": {
         "psr-4": {
@@ -21,16 +27,8 @@
     },
     "authors": [
         {
-            "name": "sumithemmadi",
+            "name" : "sumithemmadi",
             "email": "sumith7167@gmail.com"
         }
-    ],
-    "require": {
-        "google/cloud-dialogflow": "^0.23.1",
-        "phpseclib/bcmath_compat": "^2.0"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "^4.8",
-        "clean/phpdoc-md": "^0.10.0"
-    }
+    ]
 }
