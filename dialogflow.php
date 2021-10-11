@@ -33,10 +33,20 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 
 // Save Google Account Credentials json file as 'service-account-file.json'
 //make sure that Google Account Credentials JSON file and this file are in same directory.
-$google_application_credentials = [GOOGLE_APPLICATION_CREDENTIALS_FILENAME];
+$google_application_credentials = "[GOOGLE_APPLICATION_CREDENTIALS_FILENAME]";
 
 //PROJECT ID
-$projectId        = [ENTER_PROJECT_ID];
+$projectId        = "[ENTER_PROJECT_ID]";
+
+if ( $google_application_credentials == "[GOOGLE_APPLICATION_CREDENTIALS_FILENAME]") {
+    echo "Please Enter "GOOGLE_APPLICATION_CREDENTIALS_FILENAME" name in dialogflow.php file";
+    exit();
+}
+
+if ($projectId == "[ENTER_PROJECT_ID]") {
+    echo "Please Enter "ENTER_PROJECT_ID" name in dialogflow.php file";
+    exit();
+}
 
 
 $data = json_decode(file_get_contents("php://input"));
