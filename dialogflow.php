@@ -1,4 +1,4 @@
-<?php                  
+<?php
 //                                 Apache License
 //                            Version 2.0, January 2004
 //                         http://www.apache.org/licenses/
@@ -36,15 +36,16 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 $google_application_credentials = "[GOOGLE_APPLICATION_CREDENTIALS_FILENAME]";
 
 //PROJECT ID
+// Please Change "[ENTER_PROJECT_ID]" with you dialogflow project ID
 $projectId        = "[ENTER_PROJECT_ID]";
 
 if ( $google_application_credentials == "[GOOGLE_APPLICATION_CREDENTIALS_FILENAME]") {
-    echo "Please Enter GOOGLE_APPLICATION_CREDENTIALS_FILENAME name in dialogflow.php file";
+    echo "Please enter the filename of Google Account Credentials JSON file in dialogflow.php file at LINE NO : ";
     exit();
 }
 
 if ($projectId == "[ENTER_PROJECT_ID]") {
-    echo "Please Enter ENTER_PROJECT_ID name in dialogflow.php file";
+    echo "Please enter project ID in dialogflow.php file at LINE NO : ";
     exit();
 }
 
