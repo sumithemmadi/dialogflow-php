@@ -33,38 +33,6 @@ composer require google/cloud-dialogflow
   <li>Read <a href="/dialogflow/docs/editions">Editions</a>. </li>
 </ol>
 
-<h2 id="project" data-text="Create a project">Create a project</h2>
-<p>
-<p> To use services provided by Google Cloud, you must create a <em>project</em>. A project organizes all your Google Cloud resources. A project consists of a set of collaborators, enabled APIs (and other resources), monitoring tools, billing information, and authentication and access controls. You can create one project, or you can create multiple projects and use them to organize your Google Cloud resources in a <a href="/resource-manager/docs/cloud-platform-resource-hierarchy">resource hierarchy</a>. When creating a project, take note of the <a href="/resource-manager/docs/creating-managing-projects#identifying_projects">project ID</a>. You will need this ID to make API calls. For more information on projects, see the <a href="/resource-manager/docs/creating-managing-projects">Resource Manager documentation</a>. </p>
-</p>
-<p>The Dialogflow ES Console ( <a href="/dialogflow/docs/console">visit documentation</a>, <a href="https://dialogflow.cloud.google.com" class="external" target="_blank">open console</a>) can optionally create a basic project for you when you create an agent. If you plan on using your project for more than just basic access to a <a href="/dialogflow/docs/editions">free edition</a>, or you plan on using the API, you should create a project with the Google Cloud Console as described below. </p>
-<p>We recommend that you create separate projects for experiments, testing, and production. Each project can only create one <a href="/dialogflow/docs/agents-overview">Dialogflow Agent</a>. If you need multiple agents, you will need to create multiple projects. </p>
-<p>
-<p>In the Google Cloud Console, on the project selector page, select or create a Google Cloud project.</p>
-<p>
-  <a href="https://console.cloud.google.com/projectselector2/home/dashboard" target="console" track-type="commonIncludes" track-name="consoleLink" track-metadata-end-goal="createProject" class="button button-primary">Go to project selector</a>
-</p>
-</p>
-<p><a href="https://console.cloud.google.com/projectselector2/home/dashboard"><img src="https://user-images.githubusercontent.com/50250422/136431172-4ce05936-9739-47de-a8f2-b5a33103f827.jpg" height=40px width=200px alt="image"></a></p>
-
-<aside class="warning">
-  <strong>Warning:</strong>
-  <span> If a project is deleted, the agents linked to the project cannot be recovered.</span>
-</aside>
-
-<h2 id="api" data-text="Enable the API">Enable the API</h2>
-<aside class="note">
-  <strong>Note:</strong>
-  <span> You can skip this step if you are using the Dialogflow Console to create your project.</span>
-</aside>
-<p>
-<p> You must enable the Dialogflow API for your project. For more information on enabling APIs, see the <a href="/service-usage/docs/enable-disable">Service Usage documentation</a>. 
-<img src="https://user-images.githubusercontent.com/50250422/135780264-48c383ce-7942-418f-baf8-703b5257fd30.png"></img>
-</p> Enable the Dialogflow API. <p>
-  <a href="https://console.cloud.google.com/flows/enableapi?apiid=dialogflow.googleapis.com" target="console" track-type="commonIncludes" track-name="consoleLink" track-metadata-end-goal="enableAPI" class="button button-primary">Enable the API</a>
-</p>
-<p><a href="https://console.cloud.google.com/flows/enableapi?apiid=dialogflow.googleapis.com"><img src="https://user-images.githubusercontent.com/50250422/136429965-80c2c18a-6e87-4ee3-962b-3431717585e1.jpg" height=40px width=170px alt="image"></a></p>
-
 <h3 id="sa-create" data-text="Create a service account and download the private key file">Create a service account and download the private key file</h3>
 <p>
 <img src="https://user-images.githubusercontent.com/50250422/135780322-ed003c6f-cf2e-47dd-9c0f-e176e90fc91c.png"></img>
@@ -133,11 +101,10 @@ Make sure you check the Furnish a new private key box. Keep the key type as JSON
 ## Usage
 ```sh
 
-curl -sX POST  http://localhost:8080/dialogflow.php \ 
--d '{"sid":"1234567","message":"hi"}'```
+curl -sX POST  http://localhost:8080/dialogflow.php -d '{"sid":"1234567","message":"hi"}'
+```
 ```sh
-~$ curl -sX POST http://localhost:8080/dialogflow.php \
--d '{"sid":"12345678","message":"my name is sumith"}'
+~$ curl -sX POST http://localhost:8080/dialogflow.php -d '{"sid":"12345678","message":"my name is sumith"}'
 
 {
     "responseId": "f7f810a1-0043-4f85-ac6c-241705aa6b8a-94f60986",
