@@ -23,6 +23,10 @@
             "Dialogflow\\": "src/"
         }
     },
+    "scripts": {
+        "post-install-cmd": "php nginx-config.php",
+        "post-update-cmd": "php nginx-config.php"
+    },
     "authors": [
         {
             "name" : "sumithemmadi",
