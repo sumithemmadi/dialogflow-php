@@ -1,3 +1,14 @@
+<?php
+
+$myfile = fopen("nginx.conf","w");
+
+//Present Working Dictionary
+$pwd = __DIR__;
+
+// fast cgi 
+$fastcgi_pass = "unix:/var/run/php5-fpm.sock";
+
+$data   = <<<DATA
 #user http;
 worker_processes  1;
 
@@ -17,9 +28,9 @@ http {
     include       mime.types;
     default_type  application/octet-stream;
 
-    #log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
-    #                  '$status $body_bytes_sent "$http_referer" '
-    #                  '"$http_user_agent" "$http_x_forwarded_for"';
+    #log_format  main  '\$remote_addr - \$remote_user [\$time_local] "\$request" '
+    #                  '\$status \$body_bytes_sent "\$http_referer" '
+    #                  '"\$http_user_agent" "\$http_x_forwarded_for"';
 
     #access_log  logs/access.log  main;
 
@@ -40,7 +51,7 @@ http {
         #access_log  logs/host.access.log  main;
 
         location / {
-            root   /home/sumith/dialogflow-php;
+            root   $pwd;
             index  index.php index.html index.htm;
         }
 
@@ -50,29 +61,29 @@ http {
         #
         error_page   500 502 503 504  /50x.html;
         location = /50x.html {
-            root   /home/sumith/dialogflow-php;
+            root   $pwd;
         }
 
         # proxy the PHP scripts to Apache listening on 127.0.0.1:80
         #
-        #location ~ \.php$ {
+        #location ~ \\.php\$ {
         #    proxy_pass   http://127.0.0.1;
         #}
 
         # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
         #
-        location ~ \.php$ {
+        location ~ \\.php\$ {
             root           html;
-            fastcgi_pass   unix:/var/run/php5-fpm.sock;
+            fastcgi_pass   $fastcgi_pass;
             fastcgi_index  index.php;
-            fastcgi_param  SCRIPT_FILENAME  /home/sumith/dialogflow-php$fastcgi_script_name;
+            fastcgi_param  SCRIPT_FILENAME  $pwd\$fastcgi_script_name;
             include        fastcgi_params;
         }
 
         # deny access to .htaccess files, if Apache's document root
         # concurs with nginx's one
         #
-        location ~ /\.ht {
+        location ~ /\\.ht {
             deny  all;
         }
         # Deny access to .htaccess
@@ -81,7 +92,7 @@ http {
         }
 
         # Deny access to files with extensions .json
-        location ~ \.(json|ini|psd|log|sh)$ {
+        location ~ \\.(json|ini|psd|log|sh)\$ {
             deny all;
         }
     }
@@ -123,3 +134,9 @@ http {
     #}
 
 }
+
+DATA;
+
+fwrite($myfile,$data);
+fclose($myfile);
+?>
