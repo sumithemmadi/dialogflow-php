@@ -125,6 +125,16 @@ http {
         location ~ \\.(json|ini|psd|log|sh)\$ {
             deny all;
         }
+
+        #Deny access to nginx-conf.php
+        location = /nginx-conf.php {
+            deny all;
+        }
+
+        #Deny access to nginx.conf
+        location = /nginx.conf {
+            deny all;
+        }
     }
 
 
