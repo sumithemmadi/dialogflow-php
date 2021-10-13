@@ -15,9 +15,6 @@
         "google/cloud-dialogflow": "^0.23.1",
         "phpseclib/bcmath_compat": "^2.0"
     },
-    "require-dev": {
-        "phpunit/phpunit": "^4.8"
-    },
     "autoload": {
         "psr-4": {
             "Dialogflow\\": "src/"
@@ -29,8 +26,7 @@
     },
     "authors": [
         {
-            "name" : "sumithemmadi",
-            "email": "sumith7167@gmail.com"
+            "name" : "sumithemmadi"
         }
     ]
 }
