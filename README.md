@@ -17,14 +17,16 @@ cd dialogflow-php
 ```
 - Then  install the preferred dependencies for Dialogflow.
 
-```bash
+```
 composer install
 ```
+<!--
+- To update all dependencies .
 
-- Or install latest version with below command:
-```bash
-composer require google/cloud-dialogflow
 ```
+composer update
+```
+-->
 
 <h2 id="before" data-text="Before you begin">Before you begin</h2>
 <p>You should do the following before reading this guide:</p>
