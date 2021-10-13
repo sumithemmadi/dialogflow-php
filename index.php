@@ -1,3 +1,3 @@
 <?php
-header('Location: /html');
+include __DIR__.'/html/index.html';
 ?>
