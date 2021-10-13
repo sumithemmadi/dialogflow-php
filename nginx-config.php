@@ -2,13 +2,16 @@
 
 $myfile = fopen("nginx.conf","w");
 
-//Present Working Dictionary
+// Present Working Dictionary
 $pwd = __DIR__;
 
-//error_page
+// error_page
 $errorPage = __DIR__."/error_page";
 // fast cgi 
-$fastcgiPass = "unix:/var/run/php5-fpm.sock";
+$fastcgiPass  = "127.0.0.1:9000";
+
+// Uncomment below line If you’re using unix socket.
+//$fastcgiPass = "unix:/var/run/php-fpm.sock";
 
 $data   = <<<DATA
 #user http;
@@ -74,11 +77,15 @@ http {
 
         # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
         #
-        location ~ \\.php\$ {
-            root           html;
+        location ~ [^/]\\.php(/|\$) {
+            root           $pwd;
+            fastcgi_split_path_info ^(.+?\.php)(/.*)$;
+            if (!-f \$document_root\$fastcgi_script_name) {
+                   return 404;
+            }
             fastcgi_pass   $fastcgiPass;
             fastcgi_index  index.php;
-            fastcgi_param  SCRIPT_FILENAME  $pwd\$fastcgi_script_name;
+            fastcgi_param  SCRIPT_FILENAME  \$document_root\$fastcgi_script_name;
             include        fastcgi_params;
         }
 
