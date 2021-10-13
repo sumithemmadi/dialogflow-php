@@ -32,7 +32,7 @@ $fastcgiPass  = "127.0.0.1:9000";
 //$fastcgiPass = "unix:/var/run/php-fpm.sock";
 
 $data   = <<<DATA
-,#user http;
+#user http;
 worker_processes  1;
 
 #error_log  logs/error.log;
