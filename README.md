@@ -20,18 +20,11 @@ cd dialogflow-php
 ```
 composer install
 ```
-<!--
-- To update all dependencies .
-
-```
-composer update
-```
--->
 
 <h2 id="before" data-text="Before you begin">Before you begin</h2>
 <p>You should do the following before reading this guide:</p>
 <ol>
-  <li>Read <a href="/dialogflow/docs/basics">Dialogflow basics</a>. </li>
+  <li>create a <strong>Agent</strong> in <a href="https://dialogflow.cloud.google.com/">Dialogflow</a>.for more details <a href="https://cloud.google.com/dialogflow/es/docs/quick/build-agent#create-an-agent">click here</a>. </li>
   <li>Read <a href="/dialogflow/docs/editions">Editions</a>. </li>
 </ol>
 
