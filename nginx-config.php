@@ -5,8 +5,10 @@ $myfile = fopen("nginx.conf","w");
 //Present Working Dictionary
 $pwd = __DIR__;
 
+//error_page
+$errorPage = __DIR__."/error_page";
 // fast cgi 
-$fastcgi_pass = "unix:/var/run/php5-fpm.sock";
+$fastcgiPass = "unix:/var/run/php5-fpm.sock";
 
 $data   = <<<DATA
 #user http;
@@ -61,7 +63,7 @@ http {
         #
         error_page   500 502 503 504  /50x.html;
         location = /50x.html {
-            root   $pwd;
+            root   $errorPage;
         }
 
         # proxy the PHP scripts to Apache listening on 127.0.0.1:80
@@ -74,7 +76,7 @@ http {
         #
         location ~ \\.php\$ {
             root           html;
-            fastcgi_pass   $fastcgi_pass;
+            fastcgi_pass   $fastcgiPass;
             fastcgi_index  index.php;
             fastcgi_param  SCRIPT_FILENAME  $pwd\$fastcgi_script_name;
             include        fastcgi_params;
@@ -87,9 +89,9 @@ http {
             deny  all;
         }
         # Deny access to .htaccess
-        location /.htaccess {
-            deny all;
-        }
+        #location /.htaccess {
+        #    deny all;
+        #}
 
         # Deny access to files with extensions .json
         location ~ \\.(json|ini|psd|log|sh)\$ {
