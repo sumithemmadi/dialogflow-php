@@ -24,8 +24,12 @@ composer install
 <h2 id="before" data-text="Before you begin">Before you begin</h2>
 <p>You should do the following before reading this guide:</p>
 <ol>
-  <li>create a <strong>Agent</strong> in <a href="https://dialogflow.cloud.google.com/">Dialogflow</a>.for more details <a href="https://cloud.google.com/dialogflow/es/docs/quick/build-agent#create-an-agent">click here</a>. </li>
-  <li>Read <a href="/dialogflow/docs/editions">Editions</a>. </li>
+  <li>First create a project on <a href="https://console.cloud.google.com/projectselector/iam-admin/serviceaccounts/create?supportedpurview=project">Google Cloud Console</a> then <strong>create a service account</strong> and download the private key file. </li>
+  <li><strong>Create Agent</strong> in <a href="https://dialogflow.cloud.google.com/">Dialogflow</a> and get the project ID from <strong>settings</strong>.
+     <blockquote>
+       <p><em>for more details <a href="https://cloud.google.com/dialogflow/es/docs/quick/build-agent#create-an-agent">click here</a>.</em></p>
+     </blockquote> 
+  </li>
 </ol>
 
 <h3 id="sa-create" data-text="Create a service account and download the private key file">Create a service account and download the private key file</h3>
