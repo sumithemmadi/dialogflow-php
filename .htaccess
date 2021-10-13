@@ -17,7 +17,7 @@ Deny from all
 </Files>
 
 # Deny access to files with extensions .ini, .psd, .log, .sh , .json
-<FilesMatch "\.(json|ini|psd|log|sh)$">
+<FilesMatch "\.(json|ini|psd|log|sh|lock)$">
 Order allow,deny
 Deny from all
 </FilesMatch>
