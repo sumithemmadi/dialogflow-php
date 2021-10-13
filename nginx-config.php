@@ -6,7 +6,7 @@ $myfile = fopen("nginx.conf","w");
 $pwd = __DIR__;
 
 // error_page
-$errorPage = __DIR__."/error_page";
+$errorPage = __DIR__;
 // fast cgi 
 $fastcgiPass  = "127.0.0.1:9000";
 
@@ -77,11 +77,18 @@ http {
 
         # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
         #
+        #location ~ \\.php\$ {
+        #    root           html;
+        #    fastcgi_pass   $fastcgiPass;
+        #    fastcgi_index  index.php;
+        #    fastcgi_param  SCRIPT_FILENAME  /scripts\$fastcgi_script_name;
+        #    include        fastcgi_params;
+        #}
         location ~ [^/]\\.php(/|\$) {
             root           $pwd;
-            fastcgi_split_path_info ^(.+?\.php)(/.*)$;
+            fastcgi_split_path_info ^(.+?\\.php)(/.*)\$;
             if (!-f \$document_root\$fastcgi_script_name) {
-                   return 404;
+                return 404;
             }
             fastcgi_pass   $fastcgiPass;
             fastcgi_index  index.php;
@@ -89,17 +96,13 @@ http {
             include        fastcgi_params;
         }
 
+
         # deny access to .htaccess files, if Apache's document root
         # concurs with nginx's one
         #
         location ~ /\\.ht {
             deny  all;
         }
-        # Deny access to .htaccess
-        #location /.htaccess {
-        #    deny all;
-        #}
-
         # Deny access to files with extensions .json
         location ~ \\.(json|ini|psd|log|sh)\$ {
             deny all;
@@ -143,8 +146,9 @@ http {
     #}
 
 }
-
 DATA;
+
+// echo $data;
 
 fwrite($myfile,$data);
 fclose($myfile);
