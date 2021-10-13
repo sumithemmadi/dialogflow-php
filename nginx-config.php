@@ -78,7 +78,7 @@ http {
         # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
         #
         #location ~ \\.php\$ {
-        #    root           html;
+        #    root           $pwd;
         #    fastcgi_pass   $fastcgiPass;
         #    fastcgi_index  index.php;
         #    fastcgi_param  SCRIPT_FILENAME  /scripts\$fastcgi_script_name;
