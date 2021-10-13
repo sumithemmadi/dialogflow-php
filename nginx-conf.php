@@ -21,7 +21,7 @@ $myfile = fopen("nginx.conf","w");
 // Present Working Dictionary
 $pwd = __DIR__;
 
-$serverPort = "80";
+$serverPort = "8080";
 
 // error_page
 $errorPage = __DIR__;
