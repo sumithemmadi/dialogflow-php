@@ -123,7 +123,7 @@ http {
             deny  all;
         }
         # Deny access to files with extensions .json
-        location ~ \\.(json|ini|psd|log|sh)\$ {
+        location ~ \\.(json|ini|psd|log|sh|lock)\$ {
             deny all;
         }
 
