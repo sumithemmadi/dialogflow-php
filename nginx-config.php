@@ -5,6 +5,8 @@ $myfile = fopen("nginx.conf","w");
 // Present Working Dictionary
 $pwd = __DIR__;
 
+$serverPort = "80";
+
 // error_page
 $errorPage = __DIR__;
 // fast cgi 
@@ -14,7 +16,7 @@ $fastcgiPass  = "127.0.0.1:9000";
 //$fastcgiPass = "unix:/var/run/php-fpm.sock";
 
 $data   = <<<DATA
-#user http;
+,#user http;
 worker_processes  1;
 
 #error_log  logs/error.log;
@@ -48,7 +50,7 @@ http {
     #gzip  on;
 
     server {
-        listen       80;
+        listen       $serverPort;
         server_name  localhost;
 
         #charset koi8-r;
