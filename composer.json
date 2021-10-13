@@ -21,8 +21,8 @@
         }
     },
     "scripts": {
-        "post-install-cmd": "php nginx-config.php",
-        "post-update-cmd": "php nginx-config.php"
+        "post-install-cmd": "php nginx-conf.php",
+        "post-update-cmd": "php nginx-conf.php"
     },
     "authors": [
         {
