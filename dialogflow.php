@@ -17,6 +17,7 @@
 //    limitations under the License.
 
 namespace Google\Cloud\Samples\Dialogflow;
+
 use Google\Cloud\Dialogflow\V2\SessionsClient;
 use Google\Cloud\Dialogflow\V2\TextInput;
 use Google\Cloud\Dialogflow\V2\QueryInput;
