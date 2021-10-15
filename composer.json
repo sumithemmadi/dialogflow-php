@@ -1,0 +1,33 @@
+{
+    "name": "sumithemmadi/dialogflow-php",
+    "description": "Dialogflow Fulfillment in PHP",
+    "keywords": [
+        "Dialogflow",
+        "api.ai",
+        "webhook",
+        "client library",
+        "fulfillment",
+        "PHP"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=5.4",
+        "google/cloud-dialogflow": "^0.23.1",
+        "phpseclib/bcmath_compat": "^2.0"
+    },
+    "require-dev": {
+        "google/cloud-core": "^1.20"
+    },
+    "autoload": {
+        "files": ["src/dialogflow.php"]
+    },
+    "scripts": {
+        "post-install-cmd": "php nginx-conf.php",
+        "post-update-cmd": "php nginx-conf.php"
+    },
+    "authors": [
+        {
+            "name" : "sumithemmadi"
+        }
+    ]
+}
