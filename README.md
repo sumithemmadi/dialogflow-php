@@ -128,14 +128,6 @@ $text = "hi";
 $queryResponse = get_response_from_text($google_application_credentials,$projectId,$sessionId,$languageCode,$text);
 
 echo $queryResponse;
-
-
-// Get Response from audio input.
-// $path = "test/hello.wav";
-
-// $audioResponse = get_response_from_audio($google_application_credentials,$projectId,$path, $sessionId, $languageCode);
-// echo $audioResponse;
-
 ?>
 ```
 #### Audio Response
@@ -168,6 +160,7 @@ $sessionId   = "123456789";
 $audioResponse = get_response_from_audio($google_application_credentials,$projectId,$path, $sessionId, $languageCode);
 echo $audioResponse;
 
+?>
 ```
 #### Response Output 
 
