@@ -9,8 +9,9 @@ header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
-// Save Google Account Credentials json file as 'service-account-file.json'
-//make sure that Google Account Credentials JSON file and this file are in same directory.
+// Save Google Account Credentials json file in root directory
+// make sure that Google Account Credentials JSON file and this file are in same directory.
+// Replace "config.json" with Google Account Credentials json filename .
 $google_application_credentials = "config.json";
 
 //PROJECT ID
