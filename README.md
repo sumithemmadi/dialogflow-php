@@ -98,13 +98,80 @@ Make sure you check the Furnish a new private key box. Keep the key type as JSON
 
 
 ## Usage
-```sh
 
-curl -sX POST  http://localhost:8080/dialogflow.php -d '{"sid":"1234567","message":"hi"}'
+#### Text Response
+```php
+<?php
+namespace Google\Cloud\Samples\Dialogflow;
+
+require __DIR__ . "/vendor/autoload.php";
+
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json; charset=UTF-8");
+header("Access-Control-Allow-Methods: POST");
+header("Access-Control-Max-Age: 3600");
+header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+
+// Save Google Account Credentials json file as 'service-account-file.json'
+//make sure that Google Account Credentials JSON file and this file are in same directory.
+$google_application_credentials = "config.json";
+
+//PROJECT ID
+// Please Change "[ENTER_PROJECT_ID]" with you dialogflow project ID
+$projectId = "sumith-bot";
+$languageCode = 'en-US';
+$sessionId   = "123456789";
+
+// Get response from text input.
+$text = "hi";
+
+$queryResponse = get_response_from_text($google_application_credentials,$projectId,$sessionId,$languageCode,$text);
+
+echo $queryResponse;
+
+
+// Get Response from audio input.
+// $path = "test/hello.wav";
+
+// $audioResponse = get_response_from_audio($google_application_credentials,$projectId,$path, $sessionId, $languageCode);
+// echo $audioResponse;
+
+?>
 ```
-```sh
-~$ curl -sX POST http://localhost:8080/dialogflow.php -d '{"sid":"12345678","message":"my name is sumith"}'
+#### Audio Response
+```php
+<?php
+namespace Google\Cloud\Samples\Dialogflow;
 
+require __DIR__ . "/vendor/autoload.php";
+
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json; charset=UTF-8");
+header("Access-Control-Allow-Methods: POST");
+header("Access-Control-Max-Age: 3600");
+header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+
+// Save Google Account Credentials json file as 'service-account-file.json'
+//make sure that Google Account Credentials JSON file and this file are in same directory.
+$google_application_credentials = "config.json";
+
+//PROJECT ID
+// Please Change "[ENTER_PROJECT_ID]" with you dialogflow project ID
+$projectId = "sumith-bot";
+$languageCode = 'en-US';
+$sessionId   = "123456789";
+
+
+// Get Response from audio input.
+ $path = "test/hello.wav";
+
+$audioResponse = get_response_from_audio($google_application_credentials,$projectId,$path, $sessionId, $languageCode);
+echo $audioResponse;
+
+```
+#### Response Output 
+
+```sh
 {
     "responseId": "f7f810a1-0043-4f85-ac6c-241705aa6b8a-94f60986",
     "queryResult": {
