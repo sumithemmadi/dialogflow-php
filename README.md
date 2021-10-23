@@ -194,18 +194,17 @@ echo $audioResponse;
     }
 }
 ```
+## Nginx Server(Production)
+- **Create a nginx server** 
 
-## Testing
-- After saving the `service-account-file.json` file in main directory.
-- start a PHP server (for testing purpose)
-```php
-php -S localhost:8080
+- Run below command to generate **nginx.conf** file for your server.
 ```
-- Now open http://localhost:8080 in any web browser.
-
-- Now enter any name in `sender` field and enter any message in `message` field.
-- Click send message you will see `fullfilment message` 
-> Note: Wait untill you get fulfilment message.
+~$ php nginx-conf.php
+```
+- Now **nginx.conf** will be created in you local directory.
+- move the  **nginx.conf** file to /etc/nginx/.
+- now start the nginx server (Default port will be 8080 change )
+- Then start php-cgi on port 9000
 
 ## LICENSE
    Apache License
