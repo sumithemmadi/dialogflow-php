@@ -55,7 +55,7 @@ composer install
     <p> Click the <b>Select a role</b> field. </p>
     <p> Under <b>Quick access</b>, click <b>Basic</b>, then click <b>Owner</b>. </p>
     <aside class="note">
-      <b>Note</b>: The <b>Role</b> field affects which resources your service account can access in your project. You can revoke these roles or grant additional roles later. In production environments, do not grant the Owner, Editor, or Viewer roles. Instead, grant a <a href="/iam/docs/understanding-roles#predefined_roles">predefined role</a> or <a href="/iam/docs/understanding-custom-roles">custom role</a> that meets your needs.
+      <b>Note</b>: The <b>Role</b> field affects which resources your service account can access in your project. You can revoke these roles or grant additional roles later. In production environments, do not grant the Owner, Editor, or Viewer roles. Instead, grant a <a href="https://cloud.google.com/iam/docs/understanding-roles#predefined_roles">predefined role</a> or <a href="https://cloud.google.com/iam/docs/understanding-custom-roles">custom role</a> that meets your needs.
     </aside>
   </li>
   <li> Click <b>Continue</b>. </li>
