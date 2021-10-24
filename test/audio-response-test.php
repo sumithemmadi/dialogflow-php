@@ -3,22 +3,16 @@ namespace Google\Cloud\Samples\Dialogflow;
 
 require __DIR__ . "/vendor/autoload.php";
 
-header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json; charset=UTF-8");
-header("Access-Control-Allow-Methods: POST");
-header("Access-Control-Max-Age: 3600");
-header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
-
 // Save Google Account Credentials json file in root directory
 // make sure that Google Account Credentials JSON file and this file are in same directory.
-// Replace "config.json" with Google Account Credentials json filename .
-$google_application_credentials = "config.json";
+
+$google_application_credentials = "[GOOGLE ACCOUNT_CREDENTIALS_JSON_FILE]";
 
 //PROJECT ID
 // Please Change "[ENTER_PROJECT_ID]" with you dialogflow project ID
-$projectId = "sumith-bot";
+$projectId    = "[ENTER_PROJECT_ID]";
 $languageCode = 'en-US';
-$sessionId   = "123456789";
+$sessionId    = "123456789";
 
 // Get Response from audio input.
 $path = "test/hello.wav";
