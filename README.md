@@ -167,11 +167,11 @@ echo $audioResponse;
 - **Create a nginx server** 
 
 - Run below command to generate **nginx.conf** file for your server.
-```
+```bash
 ~$ php nginx-conf.php
 ```
 - Now **nginx.conf** will be created in you local directory.
-- move the  **nginx.conf** file to /etc/nginx/.
+- move the  **nginx.conf** file to **/etc/nginx/**.
 - now start the *nginx* server (Default port will be 80)
 - Then start *php-cgi* on port 9000
 ```bash
