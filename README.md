@@ -88,7 +88,7 @@ require __DIR__ . "/vendor/autoload.php";
 // Save Google Account Credentials json file in root directory
 // make sure that Google Account Credentials JSON file and this file are in same directory.
 
-$google_application_credentials = [GOOGLE ACCOUNT_CREDENTIALS_JSON_FILE]";
+$google_application_credentials = "[GOOGLE ACCOUNT_CREDENTIALS_JSON_FILE]";
 
 //PROJECT ID
 // Please Change "[ENTER_PROJECT_ID]" with you dialogflow project ID
@@ -114,7 +114,7 @@ require __DIR__ . "/vendor/autoload.php";
 // Save Google Account Credentials json file in root directory
 // make sure that Google Account Credentials JSON file and this file are in same directory.
 
-$google_application_credentials = [GOOGLE ACCOUNT_CREDENTIALS_JSON_FILE]";
+$google_application_credentials = "[GOOGLE ACCOUNT_CREDENTIALS_JSON_FILE]";
 
 //PROJECT ID
 // Please Change "[ENTER_PROJECT_ID]" with you dialogflow project ID
