@@ -92,7 +92,7 @@ require __DIR__ . "/vendor/autoload.php";
 
 $google_application_credentials = "[GOOGLE ACCOUNT_CREDENTIALS_JSON_FILE]";
 
-//PROJECT ID
+// PROJECT ID
 // Please Change "[ENTER_PROJECT_ID]" with you dialogflow project ID
 $projectId    = "[ENTER_PROJECT_ID]";
 $languageCode = 'en-US';
@@ -118,7 +118,7 @@ require __DIR__ . "/vendor/autoload.php";
 
 $google_application_credentials = "[GOOGLE ACCOUNT_CREDENTIALS_JSON_FILE]";
 
-//PROJECT ID
+// PROJECT ID
 // Please Change "[ENTER_PROJECT_ID]" with you dialogflow project ID
 $projectId    = "[ENTER_PROJECT_ID]";
 $languageCode = 'en-US';
