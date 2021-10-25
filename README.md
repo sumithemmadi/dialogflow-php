@@ -30,7 +30,7 @@ composer install
        <p><em>for more details <a href="https://cloud.google.com/dialogflow/es/docs/quick/build-agent#create-an-agent">click here</a>.</em></p>
      </blockquote> 
    </li>
-   <li>There you can see <b>Your Project ID</b>  at <b>GOOGLE PROJECT in GENERAL settings</b>
+   <li>There you can see <b>Your Project ID</b>  at <b>GOOGLE PROJECT</b> in <b>GENERAL</b> settings
      <img src="https://user-images.githubusercontent.com/50250422/138579929-1da3be87-c588-4c37-8ebf-45b5a3b5f0d8.png"></img>
    </li>
 </ol>
