@@ -15,7 +15,7 @@
 
 ## Installation
 
-- To begin, lets clone this repository
+- To begin,lets clone this repository
 ```bash
 git clone https://github.com/sumithemmadi/dialogflow-php.git
 cd dialogflow-php
