@@ -1,4 +1,9 @@
 # dialogflow-php
+[![Version](https://img.shields.io/badge/Version-1.0.7-blue)](https://github.com/sumithemmadi/dialogflow-php)
+[![Licence](https://img.shields.io/github/license/sumithemmadi/dialogflow-php)](https://github.com/sumithemmadi/dialogflow-php)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsumithemmadi%2Ftruecallerjs.svg?type=shield)](https://github.com/sumithemmadi/dialogflow-php)
+[![Maintenance](https://img.shields.io/npms-io/maintenance-score/truecallerjs)](https://github.com/sumithemmadi/dialogflow-php)
+[![issues](https://img.shields.io/github/issues/sumithemmadi/dialogflow-php)](https://github.com/sumithemmadi/dialogflow-php)
 - PHP Client Library for Dialogflow API v2
 
 ## Requirements
